@@ -62,4 +62,10 @@ export class ProductionDemandService extends BaseService {
       return <any>res.json()
     });
   }
+  // 获取上级工厂模型数据
+  getParentModelType() {
+    return this.http.get(CommonHelper.getUrl(PRODUCTION_DEMAN_URL),CommonHelper.getJSONRequestOptions()).toPromise().then((res:Response) => {
+      return res.json()
+    });
+  }
 }
