@@ -160,7 +160,17 @@ export class ProductionDemandComponent implements OnInit {
         this.getlist();
       }
     });
-    
+    this.ProductionDemandService.isUpdateSuccess.subscribe((upData) => {
+      if (upData.flag) {
+        this.getlist();
+        this.alertMsg = [{
+          type: 'success',
+          msg: '修改成功',
+          timeout: 2000
+        }];
+        this.ProductionDemandService.afterUpdateSuccess.emit(upData.flag);
+      }
+    });
     this.searchTable();
 
 

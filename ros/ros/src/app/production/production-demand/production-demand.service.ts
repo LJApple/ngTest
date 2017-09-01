@@ -72,4 +72,16 @@ export class ProductionDemandService extends BaseService {
       return res.json();
     });
   }
+   // 更新接口
+   factoryModelTypeUpdata(id ,data) {
+    return this.http.put(CommonHelper.getUrl(PRODUCTION_DEMAN_URL+id),JSON.stringify(data),CommonHelper.getJSONRequestOptions()).toPromise().then((res:Response) => {
+      return res.json();
+    });
+  }
+   // 查看接口
+   factoryModelTypeView(id) {
+    return this.http.get(CommonHelper.getUrl(PRODUCTION_DEMAN_URL+id)).toPromise().then((res:Response) => {
+      return res.json();
+    });
+  }
 }

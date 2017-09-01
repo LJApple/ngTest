@@ -127,7 +127,7 @@ const FUNCTION_CONFIG = [
     { functionCode: 'productionRequirement', functionName: '生产需求',unique: true, component: ProductionDemandComponent },
     { functionCode: 'production_model_type_create', functionName: '新增生产需求',unique: true, component: ProductionDemandCreateComponent },
     { functionCode: 'production_model_type_update', functionName: '修改生产需求',unique: true, component: ProdutionDemandUpdateComponent },
-    { functionCode: 'production_model_type_view', functionName: '产看生产需求',unique: true, component: ProdutionDemandViewComponent }
+    { functionCode: 'production_model_type_view', functionName: '查看生产需求',unique: true, component: ProdutionDemandViewComponent }
 ];
 
 /**
