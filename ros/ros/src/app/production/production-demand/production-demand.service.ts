@@ -12,8 +12,6 @@ const VERSION = "v1";
 
 // 获取主页面的list
 const PRODUCTION_DEMAN_URL = SERVICE_BASE_ADDR + VERSION + "/admin/FactoryModelTypes/";
-// 新增工厂模型类型数据
-const CREATE_URL  = SERVICE_BASE_ADDR + VERSION + "/admin/FactoryModelTypes/";
 
 @Injectable()
 export class ProductionDemandService extends BaseService {
@@ -58,14 +56,20 @@ export class ProductionDemandService extends BaseService {
   }
   // 新增保存接口
   saveFactoryModelType(data) {
-    return this.http.post(CommonHelper.getUrl(CREATE_URL), JSON.stringify(data), CommonHelper.getJSONRequestOptions()).toPromise().then((res: Response) => {
+    return this.http.post(CommonHelper.getUrl(PRODUCTION_DEMAN_URL), JSON.stringify(data), CommonHelper.getJSONRequestOptions()).toPromise().then((res: Response) => {
       return <any>res.json()
     });
   }
-  // 获取上级工厂模型数据
+  // 获取上级工厂模型数据select
   getParentModelType() {
     return this.http.get(CommonHelper.getUrl(PRODUCTION_DEMAN_URL),CommonHelper.getJSONRequestOptions()).toPromise().then((res:Response) => {
       return res.json()
+    });
+  }
+  // 删除表格行数据
+  deletRow(id: string) {
+    return this.http.delete(CommonHelper.getUrl(PRODUCTION_DEMAN_URL+id),CommonHelper.getJSONRequestOptions()).toPromise().then((res:Response) => {
+      return res.json();
     });
   }
 }

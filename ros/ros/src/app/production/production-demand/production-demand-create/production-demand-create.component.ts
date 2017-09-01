@@ -58,11 +58,6 @@ export class ProductionDemandCreateComponent implements OnInit {
       Observable.fromPromise(this.ProductionDemandService.saveFactoryModelType(this.createFanctoryModel.value)).subscribe(data => {
         console.log(data);
         if (data.result.success === 1) {
-          self.alertMsg.push({
-            type: "success",
-            alertMsg:data.result.err_msg,
-            time:2000
-          });
           this.mainTalService.onTabRemove.emit(this.functionCode);
           // 更新表格数据
           self.flag = true;
@@ -72,11 +67,12 @@ export class ProductionDemandCreateComponent implements OnInit {
               msg:data.result.err_msg,
               type:self.type
           };
+          console.log(tempData);
           self.ProductionDemandService.isCreateSuccess.emit(tempData);
         } else {
           self.alertMsg.push({
             type: "danger",
-            alertMsg:data.result.err_msg,
+            msg:data.result.err_msg,
             time:2000
           });
         }
@@ -89,6 +85,7 @@ export class ProductionDemandCreateComponent implements OnInit {
       })
     }
   }
+  
   /**
    * 取消保存数据并且关闭当前窗口
    */

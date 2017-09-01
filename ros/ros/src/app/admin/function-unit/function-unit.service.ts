@@ -58,6 +58,8 @@ import { PuchrecordingComponent } from "app/personnelmatters/checkworkattendance
 import { WorkSchedulePlanComponent } from "app/personnelmatters/checkworkattendance/work-schedule-plan/work-schedule-plan.component";
 import { ProductionDemandComponent } from "app/production/production-demand/production-demand.component";
 import { ProductionDemandCreateComponent } from "app/production/production-demand/production-demand-create/production-demand-create.component";
+import { ProdutionDemandViewComponent } from "app/production/production-demand/prodution-demand-view/prodution-demand-view.component";
+import { ProdutionDemandUpdateComponent } from "app/production/production-demand/prodution-demand-update/prodution-demand-update.component";
 
 /**
  * 请求地址
@@ -123,7 +125,9 @@ const FUNCTION_CONFIG = [
     { functionCode: 'cashVoucher_update', functionName: '编辑出纳', component: CashVoucherComponent },
     { functionCode: 'cashVoucher_view', functionName: '编辑出纳', component: CashVoucherComponent },
     { functionCode: 'productionRequirement', functionName: '生产需求',unique: true, component: ProductionDemandComponent },
-    { functionCode: 'production_model_type_create', functionName: '新增生产需求',unique: true, component: ProductionDemandCreateComponent }
+    { functionCode: 'production_model_type_create', functionName: '新增生产需求',unique: true, component: ProductionDemandCreateComponent },
+    { functionCode: 'production_model_type_update', functionName: '修改生产需求',unique: true, component: ProdutionDemandUpdateComponent },
+    { functionCode: 'production_model_type_view', functionName: '产看生产需求',unique: true, component: ProdutionDemandViewComponent }
 ];
 
 /**

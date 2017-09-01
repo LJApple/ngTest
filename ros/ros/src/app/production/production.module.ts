@@ -45,6 +45,8 @@ import { ProcessGridComponent } from './bad-code-type/bad-code-type-create/proce
 import { ProductionDemandService } from "app/production/production-demand/production-demand.service";
 import { ProductionDemandComponent } from "app/production/production-demand/production-demand.component";
 import { ProductionDemandCreateComponent } from './production-demand/production-demand-create/production-demand-create.component';
+import { ProdutionDemandUpdateComponent } from './production-demand/prodution-demand-update/prodution-demand-update.component';
+import { ProdutionDemandViewComponent } from './production-demand/prodution-demand-view/prodution-demand-view.component';
 
 @NgModule({
     imports: [
@@ -84,7 +86,9 @@ import { ProductionDemandCreateComponent } from './production-demand/production-
         BadCodeTypeUpdateComponent,
         ProcessGridComponent,
         ProductionDemandComponent,
-        ProductionDemandCreateComponent
+        ProductionDemandCreateComponent,
+        ProdutionDemandUpdateComponent,
+        ProdutionDemandViewComponent
     ],
     providers: [
         MachineInspectionPlanService,
@@ -129,7 +133,9 @@ import { ProductionDemandCreateComponent } from './production-demand/production-
         BadCodeTypeUpdateComponent,
         ProcessGridComponent,
         ProductionDemandComponent,
-        ProductionDemandCreateComponent
+        ProductionDemandCreateComponent,
+        ProdutionDemandUpdateComponent,
+        ProdutionDemandViewComponent
     ],
 })
 export class ProductionModule {
