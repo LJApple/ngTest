@@ -1,0 +1,6 @@
+<div class="module-list-container" [ngClass]="{active:showFirst}" [class.collapsed]="isSideBarCollapsed()">
+    <app-user-icon [sideBarState]="sideBarState"></app-user-icon>
+    <ul class="module-list">
+        <app-module *ngFor="let module of moduleList" [module]="module" [sideBarState]="sideBarState" (onSelectModule)="onSelectModule($event)"></app-module>
+    </ul>
+</div>

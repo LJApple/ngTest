@@ -1,0 +1,203 @@
+.sidebar {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  background: #141414;
+
+  .header {
+    height: 100%;
+
+    .nav-toggle {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1rem;
+      z-index: 100;
+
+      &:before {
+        transition: transform 220ms,top 220ms 200ms;
+        transition-timing-function: cubic-bezier(.42,0,.4,1.6);
+        transform: rotate(0);
+        top: 0;
+      }
+
+      &:after {
+        transition: transform 220ms,bottom 220ms 200ms;
+        transition-timing-function: cubic-bezier(.42,0,.4,1.6);
+        transform: rotate(0);
+        bottom: 0;
+      }
+
+      .hamburger {
+        margin: 5px auto;
+        opacity: 1;
+        left: 0;
+        transition: left 200ms,opacity 200ms;
+        transition-timing-function: cubic-bezier(.9,0,.2,1);
+      }
+
+      &:after,
+      &:before,
+      .hamburger {
+        content: '';
+        background: #fff;
+        border-radius: 3px;
+        display: block;
+        height: .21rem;
+        width: 1.25rem;
+        position: relative;
+      }
+
+      &.active {
+        &:before {
+          transition: transform 220ms,top 220ms;
+          transition-timing-function: cubic-bezier(.42,0,.4,1.6);
+          transform: rotate(45deg);
+          top: 8px;
+        }
+
+        &:after {
+          transition: transform 220ms,bottom 220ms;
+          transition-timing-function: cubic-bezier(.42,0,.4,1.6);
+          transform: rotate(-45deg);
+          bottom: 8px;
+        }
+
+        .hamburger {
+          opacity: 0;
+          left: -1rem;
+        }
+      }
+    }
+
+    .logo {
+      position: absolute;
+      width: 166px;
+      height: 28px;
+      top: 50%;
+      left: 50%;
+      z-index: 100;
+      transform: translate(-50%,-50%);
+      background: url('/assets/image/logo/3t_logo_white_166x28.png');
+    }
+  }
+
+  .footer,
+  .sidenav {
+    position: absolute;
+    right: 100%;
+  }
+
+  .sidenav {
+    &.active {
+      background-color: rgba(47,47,50,.94);
+      padding: 5rem 4rem 2rem;
+      height: 100vh;
+      transition: right .25s;
+      right: 0;
+      position: absolute;
+      display: block;
+      z-index: 50;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &.collapsed {
+    width: 100% !important;
+
+    .header {
+      .logo {
+        width: 166px;
+        left: 50%;
+      }
+    }
+
+    .footer {
+      // width: 60px;
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+}
+@media(min-width:801px) {
+  .sidebar {
+    float: left;
+    width: 290px;
+    height: 100%;
+    z-index: 1;
+    background-color: initial;
+
+    .header {
+      position: relative;
+      height: 50px;
+      background: #0b4070;
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .logo {
+        position: absolute;
+        width: 166px;
+        height: 28px;
+        top: 11px;
+        left: 20px;
+        z-index: initial;
+        transform: none;
+        background: url('/assets/image/logo/3t_logo_white_166x28.png');
+      }
+    }
+
+    .sidenav {
+      height: 100%;
+      padding-top: 50px;
+      top: 0;
+      right: initial;
+
+      &.active {
+        background-color: initial;
+        padding: initial;
+        height: 100%;
+        position: initial;
+      }
+    }
+
+    .footer {
+      right: initial;
+      position: absolute;
+      width: 130px;
+      bottom: 0;
+      line-height: 30px;
+      text-align: center;
+      font-size: .75rem;
+      color: #595b65;
+
+      span {
+        margin-left: 5px;
+      }
+    }
+
+    &.collapsed {
+      width: 60px !important;
+
+      .header {
+        .logo {
+          width: 45px;
+          left: 10px;
+        }
+      }
+
+      .footer {
+        width: 60px;
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}

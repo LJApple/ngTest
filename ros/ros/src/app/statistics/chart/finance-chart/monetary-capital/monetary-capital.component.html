@@ -1,0 +1,72 @@
+<div class="row monetary-capital" [ngBusy]="busy">
+  <div class="col-lg-12 head">
+    <p>货币资金</p>
+  </div>
+  <div class="row col-lg-12 total">
+    <div class="col-lg-7">
+      <ag-grid-angular style="width: 100%; height:100%;" class="ag-fresh" rowHeight="38"
+        headerHeight="38" class="ag-ros" [gridOptions]="gridOptions">
+      </ag-grid-angular>
+    </div>
+    <div class="col-lg-5 simpleChart">
+      <app-chart-pie-simple [ChartPieSimpleData]="option1"></app-chart-pie-simple>
+    </div>
+  </div>
+  <div class="row col-lg-12 item">
+    <div class="col-lg-4">
+      <div class="content pie-radius">
+        <div class="chart">
+          <app-chart-pie-radius [ChartPieRadiusData]="accountsReceivable_pie"></app-chart-pie-radius>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="content bar-line">
+        <div class="title">
+          应收账款排行
+        </div>
+        <div class="chart">
+          <app-chart-bar-line [ChartBarLineData]="accountsReceivable_bar"></app-chart-bar-line>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row col-lg-12 item">
+      <div class="col-lg-4">
+        <div class="content pie-radius">
+          <div class="chart">
+            <app-chart-pie-radius [ChartPieRadiusData]="accountsPayable_pie"></app-chart-pie-radius>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="content bar-line">
+          <div class="title">
+            应付账款排行
+          </div>
+          <div class="chart">
+            <app-chart-bar-line [ChartBarLineData]="accountsPayable_bar"></app-chart-bar-line>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row col-lg-12 item">
+        <div class="col-lg-4">
+          <div class="content pie-radius">
+            <div class="chart">
+              <app-chart-pie-radius [ChartPieRadiusData]="other_pie"></app-chart-pie-radius>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="content bar-line">
+            <div class="title">
+              其它应收账款排行
+            </div>
+            <div class="chart">
+              <app-chart-bar-line [ChartBarLineData]="other_bar"></app-chart-bar-line>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

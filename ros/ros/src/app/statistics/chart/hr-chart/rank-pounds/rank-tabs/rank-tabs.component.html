@@ -1,0 +1,35 @@
+<div *ngIf="ranks" class="rank-tab-container" (click)="$event.preventDefault()">
+  <tabset class="rank-main-tab">
+    <tab *ngFor="let rankItem of ranks" [heading]="rankItem.title" (click)="$event.preventDefault()"  (select)="employeeTabSelected(rankItem)"
+      (deselect)="rankItem.active = false">
+
+      <ul class="employee-rank-body">
+
+        <li class="employee-rank-container clearfix" (click)="$event.preventDefault()" *ngFor="let employeeDetail of rankItem.employeeDetail let idx=index" [class.active] = "employeeDetail.active" (click)="employeeSelected(rankItem.employeeDetail,employeeDetail)"   >
+          <!--序号  -->
+          <div class="pull-left employee-rank-number" [class.isTopThree] = "employeeDetail.isTopThree" >
+            {{employeeDetail.ranking}}
+          </div>
+           <!--照片  -->
+          <div class="pull-left employee-header-picture" >
+            <div  *ngIf = "!employeeDetail.employeeAvatar" [ngStyle] = "arrColors[idx]" >
+              <div class="name-keyword" ><span>{{employeeDetail.keyword}}</span></div>
+            </div>
+            <div *ngIf = "employeeDetail.employeeAvatar">
+              <img  src={{employeeDetail.employeeAvatar}}  alt="">
+            </div>
+          </div>
+           <!--姓名 部门  -->
+          <div class="pull-left employee-departant-selfname"  >
+             <h5>{{employeeDetail.employeeName}}</h5>
+             <h6>{{employeeDetail.organizationName}}</h6>
+          </div>
+           <!--时长  -->
+          <div class="pull-left employee-work-time" [class.isTopThree] = "employeeDetail.isTopThree">
+               {{employeeDetail.attendance_day}}天
+          </div>
+        </li>
+      </ul>
+    </tab>
+  </tabset>
+</div>

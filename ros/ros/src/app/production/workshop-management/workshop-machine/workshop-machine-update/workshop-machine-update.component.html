@@ -1,0 +1,210 @@
+<form class="machine-create-mian fade-in-right" [formGroup]="formModel">
+    <div *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+    </div>
+    <div class="mian-form">
+        <nz-root>
+            <div class="input-row">
+                <span>机台编号<i>*</i></span>
+                <div class="input-area margin-right">
+                    <input type="text" class="form-control" placeholder="输入机台编号" formControlName="no" required>
+                    <span class="warm"
+                          [hidden]="formModel.get('no').valid ||formModel.get('no').untouched">输入英文/数字,限制字符32位</span>
+                </div>
+                <span>机台名称<i>*</i></span>
+                <div class="input-area">
+                    <input type="text" placeholder="输入中文/英文/数字,限制字符32位" class="form-control" formControlName="name"
+                           required>
+                    <span class="warm"
+                          [hidden]="formModel.get('name').valid || formModel.get('name').untouched">必填项，最多32个字符</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <span>机台厂商</span>
+                <div class="input-area margin-right">
+                    <input type="text" placeholder="输入机台厂商" class="form-control" formControlName="firm_name">
+                </div>
+                <span>机台型号<i>*</i></span>
+                <div class="input-area">
+                    <input type="text" placeholder="输入中文/英文/数字,限制字符32位" class="form-control" formControlName="model"
+                           required>
+                    <span class="warm"
+                          [hidden]="formModel.get('model').valid || formModel.get('model').untouched">必填项，最多32个字符</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <span>机台规格<i>*</i></span>
+                <div class="input-area margin-right">
+                    <input type="text" placeholder="输入机台规格" class="form-control" formControlName="norms" required>
+                    <span class="warm"
+                          [hidden]=" !formModel.hasError('required',['norms']) ||formModel.get('norms').untouched"
+                    >必填项</span>
+                </div>
+                <span>所在车间<i>*</i></span>
+                <div class="input-area">
+                    <nz-select
+                        style="width: 280px;"
+                        (nzOpenChange)="_workshopSelect()"
+                        nzAllowClear
+                        [nzPlaceHolder]="'选择机台所在车间'"
+                        formControlName="workshop_id"
+                        [nzShowSearch]="true"
+                        nzNotFoundContent="没有找到">
+                        <nz-option
+                            *ngFor="let option of _workshopOptions"
+                            [nzLabel]="option.name"
+                            [nzValue]="option.id"
+                            [nzDisabled]="option.disabled">
+                        </nz-option>
+                    </nz-select>
+                    <span class="warm"
+                          [hidden]="formModel.get('workshop_id').value || workshopValid">必须要选择一个车间</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <span>机台分类<i>*</i></span>
+                <div class="input-area margin-right">
+                    <nz-select
+                        style="width: 240px;"
+                        (click)="_machine()"
+                        nzAllowClear
+                        [nzPlaceHolder]="'选择机台所在车间'"
+                        formControlName="category"
+                        [nzShowSearch]="true"
+                        nzNotFoundContent="没有找到"
+                        required>
+                        <nz-option
+                            *ngFor="let option of _categoryOptions"
+                            [nzLabel]="option.description"
+                            [nzValue]="option.value"
+                            [nzDisabled]="option.disabled">
+                        </nz-option>
+                    </nz-select>
+                    <span class="plus">+</span>
+                    <span class="warm"
+                          [hidden]="formModel.get('category').value || machineShow">请选择一个机台类别</span>
+                </div>
+                <span class="buy-time">购入时间<i>*</i></span>
+                <div class="input-area">
+                    <nz-datepicker
+                        (click)="_buyTimeClick()"
+                        [nzFormat]="'YYYY-MM-DD'"
+                        style="width: 280px;"
+                        formControlName="buy_time"
+                        [nzPlaceHolder]="'选择购入时间'">
+                    </nz-datepicker>
+                    <span class="warm"
+                          [hidden]="formModel.get('buy_time').value || buyTimeValid">请选择时间</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <span>机台IP</span>
+                <div class="input-area margin-right">
+                    <input type="text" placeholder="输入机台IP，限制字符32位" class="form-control" formControlName="ip">
+                    <span class="warm"
+                          [hidden]="!formModel.hasError('maxlength',['ip']) ||formModel.get('ip').pristine"
+                    >限制字符32位</span>
+                </div>
+                <span>功率/KW</span>
+                <div class="input-area">
+                    <input type="text" placeholder="输入机台功率" class="form-control" formControlName="power">
+                    <!--<span class="warm"
+                          [hidden]="formModel.get('power').untouched">限制字符32位</span>-->
+                </div>
+            </div>
+            <div class="input-row">
+                <span>出厂日期</span>
+                <div class="input-area margin-right">
+                    <nz-datepicker
+                        [nzFormat]="'YYYY-MM-DD'"
+                        style="width: 280px;"
+                        formControlName="firm_time"
+                        [nzPlaceHolder]="'选择购入时间'">
+                    </nz-datepicker>
+                    <!-- <span class="warm">这是一段提示</span>-->
+                </div>
+                <span>投产日期<i>*</i></span>
+                <div class="input-area">
+                    <nz-datepicker
+                        (click)="_addTimeClick()"
+                        [nzFormat]="'YYYY-MM-DD'"
+                        style="width: 280px;"
+                        formControlName="add_time"
+                        [nzPlaceHolder]="'选择投产日期'"
+                        required>
+                    </nz-datepicker>
+                    <span class="warm"
+                          [hidden]="formModel.get('add_time').value || addTimeValid">这是一段提示</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <span>数釆编号</span>
+                <div class="input-area margin-right">
+                    <input type="text" placeholder="输入数釆编号" class="form-control" formControlName="collection_no">
+                    <span class="warm"
+                          [hidden]="formModel.get('collection_no').valid || formModel.get('collection_no').pristine">请输入数字，最多32个字符</span>
+                </div>
+                <span>存放地点</span>
+                <div class="input-area">
+                    <input type="text" class="form-control" placeholder="输入存放地点" formControlName="location">
+                    <span class="warm"
+                          [hidden]="formModel.get('location').valid || formModel.get('location').pristine">请输入中文/数字/英文，最多64个字符</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <span>工位</span>
+                <div class="input-area margin-right">
+                    <nz-select
+                        style="width: 280px;"
+                        nzAllowClear
+                        [nzPlaceHolder]="'选择工位前需先选择车间'"
+                        formControlName="station_id"
+                        [nzShowSearch]="true"
+                        nzNotFoundContent="没有找到"
+                        [nzDisabled]="canSelect">
+                        <nz-option
+                            *ngFor="let option of _stationOptions"
+                            [nzLabel]="option.name"
+                            [nzValue]="option.id"
+                            [nzDisabled]="option.disabled">
+                        </nz-option>
+                    </nz-select>
+                    <!-- <span class="warm">这是一段提示</span>-->
+                </div>
+                <span>折旧年限<i>*</i></span>
+                <div class="input-area">
+                    <input type="text" class="form-control" placeholder="输入设备折旧年限，如0.5年" formControlName="useful_year"
+                           required>
+                    <span class="warm"
+                          [hidden]="formModel.get('useful_year').untouched">这是一段提示</span>
+                </div>
+            </div>
+            <div class="active row">
+                <span class="name">是否启用</span>
+                <!-- <button class="checkbox" (click)="changeActive()">
+                     <span *ngIf="active"></span>
+                 </button>
+                 (ngModelChange)="setState()"
+                 <span class="yes">是</span>-->
+                <label
+                    style="position: absolute;left: 106px;top: 7px;"
+                    nz-checkbox
+                    formControlName="state">
+                    <span>是</span>
+                </label>
+            </div>
+            <div class="text-box row">
+                <span class="name">备注</span>
+                <textarea class="form-control" rows="3"
+                          placeholder="输入备注"
+                          formControlName="remark"></textarea>
+                <span class="warm"></span>
+            </div>
+        </nz-root>
+    </div>
+    <div class="ros-row button-box">
+        <button (click)="saveFrom()" type="submit" class="btn btn-primary machine-save">保存</button>
+        <button (click)="canceledit()" type="button" class="btn btn-default machine-close">取消</button>
+    </div>
+</form>
+

@@ -1,0 +1,48 @@
+/**************车间管理的主TAB样式**********************************************************/
+.workshop-mian-tab .tab-container > .nav-tabs {
+    padding-left: 10px;
+    min-width: 220px;
+    height: 50px;
+    background-color: #f4f8f9;
+    border-bottom: 1px solid #ececec;
+    border: 1px solid #e0e0e0;
+    line-height: 50px;
+    border-top: none;
+    .nav-item {
+        padding-top: 4px;
+        margin-bottom: 0;
+        margin-left: 20px;
+        font-size: 15px;
+        text-align: center;
+    }
+    .nav-item:last-child {
+        border-right: 0;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .nav-item:first-child, .nav-item:first-child:active {
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .nav-link {
+        border: 0;
+        padding: 0px;
+        color: #898989;
+
+        &:focus, &:hover {
+            border-color: transparent;
+        }
+
+        &.active {
+            color: #009cff;
+            background-color: #f4f8f9;
+            height: 45px;
+            font-weight: 600;
+            border-bottom: 2px solid #009cff;
+            &:focus, &:hover {
+                border-color: #26acf1;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<li class="list-item top" [class.parent]="functionUnit.children.length" [class.active]="functionUnit.active" [class.expanded]="isExpanded()" [attr.function_code]="functionUnit.value">
+    <div class="text" (click)="onItemClick(functionUnit.value)"><span class="list-icon"></span>{{functionUnit.description}}</div>
+     <ul class="child-list" *ngIf="functionUnit.children" [@openClose]="stateExpression">
+        <li class="list-item" [class.active]="thirdFunctionUnitList.active" *ngFor="let thirdFunctionUnitList of functionUnit.children"
+         [attr.function_code]="thirdFunctionUnitList.value" (click)="onDetailItemClick(thirdFunctionUnitList.value)">
+            {{thirdFunctionUnitList.description}}
+        </li>
+    </ul>
+</li>

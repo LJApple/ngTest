@@ -1,0 +1,38 @@
+<div class="ros-pagination">
+    <div class="page-items">当前页显示的条数:
+        <div class="btn-group dropup">
+            <button type="button" (click)="showSelcet()" class="btn btn-default">{{rows}}</button>
+            <button type="button" (click)="showSelcet()" class="arrow btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+            </button>
+            <ul class="dropdown-menu select" *ngIf="selectSize" (click)="hideSelect()" (mouseleave)="hideSelect()">
+                <li (click)="setSize(10)">10</li>
+                <li (click)="setSize(15)">15</li>
+                <li (click)="setSize(30)">30</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="page-controller">
+        <div class="pagenation_info">
+            {{totalItems}}条记录，第{{pages}}/{{totalPages}}页
+        </div>
+        <div class="buttons">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button type="button" (click)=prevPage($event) class="btn btn-secondary">
+                        <i class="glyphicon glyphicon-menu-left"></i>
+                    </button>
+                    <input type="text" (change)=inputPage($event) [(ngModel)]="pages">
+                    <button type="button" (click)=nextPage($event) class="btn btn-secondary">
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </button>
+                    <button type="button" (click)="refreshList($event)" class="btn btn-secondary">
+                        <i class="glyphicon glyphicon-repeat"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{aba13dff-e178-454f-ad8e-0127b67824af}</ProjectGuid>
+    <ProjectHome>..\</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>karma.conf.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <EnableTypeScript>true</EnableTypeScript>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Compile Include="src\assets\js\jquery-3.2.1.min.js" />
+    <Content Include=".angular-cli.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="src\app\admin\base-data\base-data.component.html" />
+    <Content Include="src\app\admin\base-data\base-data.component.scss" />
+    <Content Include="src\app\admin\function-list\function-list.component.html" />
+    <Content Include="src\app\admin\function-list\function-list.component.scss" />
+    <Content Include="src\app\admin\function-unit\function-unit.component.html" />
+    <Content Include="src\app\admin\function-unit\function-unit.component.scss" />
+    <Content Include="src\app\admin\module-list\module-list.component.html" />
+    <Content Include="src\app\admin\module-list\module-list.component.scss" />
+    <Content Include="src\app\admin\module\module.component.html" />
+    <Content Include="src\app\admin\module\module.component.scss" />
+    <Content Include="src\app\admin\user-icon\user-icon.component.html" />
+    <Content Include="src\app\admin\user-icon\user-icon.component.scss" />
+    <Content Include="src\app\admin\user\user.component.css" />
+    <Content Include="src\app\admin\user\user.component.html" />
+    <Content Include="src\app\fms\account-book\account-book.component.css" />
+    <Content Include="src\app\fms\account-book\account-book.component.html" />
+    <Content Include="src\app\site\canvas-background\canvas-background.component.html" />
+    <Content Include="src\app\site\canvas-background\canvas-background.component.scss" />
+    <Content Include="src\app\site\change-password\change-password.component.html" />
+    <Content Include="src\app\site\change-password\change-password.component.html" />
+    <Content Include="src\app\site\change-password\change-password.component.scss" />
+    <Content Include="src\app\site\default\default.component.css" />
+    <Content Include="src\app\site\default\default.component.html" />
+    <Content Include="src\app\site\index\index.component.html" />
+    <Content Include="src\app\site\index\index.component.scss" />
+    <Content Include="src\app\site\login\login.component.html" />
+    <Content Include="src\app\site\login\login.component.scss" />
+    <Content Include="src\app\site\logo\logo.component.html" />
+    <Content Include="src\app\site\logo\logo.component.scss" />
+    <Content Include="src\app\site\sidebar\sidebar.component.html" />
+    <Content Include="src\app\site\sidebar\sidebar.component.scss" />
+    <Content Include="src\app\site\zoom\zoom.component.html" />
+    <Content Include="src\app\site\zoom\zoom.component.scss" />
+    <Content Include="src\assets\image\icon\btn_leftmenu_open.png" />
+    <Content Include="src\assets\image\icon\btn_leftmenu_shut.png" />
+    <Content Include="src\assets\image\icon\login_btn_dropdown_20x20.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menu2_dot.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menu2_open.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menu2_shut.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_business.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_engineering.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_finance.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_hr.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_production.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_purchase.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_qc.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_statistics.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_system.png" />
+    <Content Include="src\assets\image\icon\sidebar\i_menv1_warehouse.png" />
+    <Content Include="src\assets\image\icon\user_avatar_32x32.png" />
+    <Content Include="src\assets\image\logo\3t_logo_white_166x28.png" />
+    <Content Include="src\assets\image\logo\3t_logo_white_204x32.png" />
+    <Content Include="src\assets\style\base.scss" />
+    <Content Include="src\assets\style\bootstrap.cover.scss" />
+    <Content Include="src\assets\style\bootstrap.min.css" />
+    <Content Include="src\assets\style\ng2-select.css" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="README.md" />
+    <Compile Include="karma.conf.js" />
+    <Compile Include="protractor.conf.js" />
+    <Content Include="e2e\tsconfig.e2e.json" />
+    <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="e2e\app.po.ts" />
+    <Content Include="src\index.html" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\tsconfig.app.json" />
+    <Content Include="src\tsconfig.spec.json" />
+    <TypeScriptCompile Include="src\app\admin\admin.module.ts" />
+    <TypeScriptCompile Include="src\app\admin\base-data\base-data.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\base-data\base-data.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\base-data\base-data.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\admin\function-list\function-list.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\function-list\function-list.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\function-unit\function-unit.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\function-unit\function-unit.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\function-unit\function-unit.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\admin\function-unit\function-unit.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\function-unit\function-unit.service.ts" />
+    <TypeScriptCompile Include="src\app\admin\module-list\module-list.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\module-list\module-list.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\module\module.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\module\module.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\module\module.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\admin\module\module.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\module\module.service.ts" />
+    <TypeScriptCompile Include="src\app\admin\user-icon\user-icon.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\user-icon\user-icon.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\user\user.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\user\user.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\user\user.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\admin\user\user.service.ts" />
+    <TypeScriptCompile Include="src\app\base\base.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\base\base.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\base\iservice.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\fms\account-book\account-book.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\fms\account-book\account-book.component.ts" />
+    <TypeScriptCompile Include="src\app\fms\account-book\account-book.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\fms\account-book\account-book.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\fms\account-book\account-book.service.ts" />
+    <TypeScriptCompile Include="src\app\fms\fms.module.ts" />
+    <TypeScriptCompile Include="src\app\site\canvas-background\canvas-background.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\canvas-background\canvas-background.component.ts" />
+    <TypeScriptCompile Include="src\app\site\change-password\change-password.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\change-password\change-password.component.ts" />
+    <TypeScriptCompile Include="src\app\site\change-password\change-password.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\change-password\change-password.service.ts" />
+    <TypeScriptCompile Include="src\app\admin\user\user.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\site\default\default.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\default\default.component.ts" />
+    <TypeScriptCompile Include="src\app\site\index\index.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\index\index.component.ts" />
+    <TypeScriptCompile Include="src\app\site\index\profile.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\site\index\profile.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\index\profile.service.ts" />
+    <TypeScriptCompile Include="src\app\site\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\login\login.component.ts" />
+    <TypeScriptCompile Include="src\app\site\login\login.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\login\login.service.ts" />
+    <TypeScriptCompile Include="src\app\site\logo\logo.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\logo\logo.component.ts" />
+    <TypeScriptCompile Include="src\app\site\sidebar\sidebar.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\sidebar\sidebar.component.ts" />
+    <TypeScriptCompile Include="src\app\site\site.module.ts" />
+    <TypeScriptCompile Include="src\app\site\zoom\zoom.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\site\zoom\zoom.component.ts" />
+    <TypeScriptCompile Include="src\app\utils\common.helper.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\utils\logged-in.guard.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\utils\utils.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
+    <TypeScriptCompile Include="src\typings.d.ts" />
+    <Content Include="src\app\app.component.html" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="e2e" />
+    <Folder Include="ros" />
+    <Folder Include="ros\ros" />
+    <Folder Include="src" />
+    <Folder Include="src\app" />
+    <Folder Include="src\app\admin\" />
+    <Folder Include="src\app\admin\base-data\" />
+    <Folder Include="src\app\admin\function-list\" />
+    <Folder Include="src\app\admin\function-unit\" />
+    <Folder Include="src\app\admin\module-list\" />
+    <Folder Include="src\app\admin\module\" />
+    <Folder Include="src\app\admin\user-icon\" />
+    <Folder Include="src\app\admin\user\" />
+    <Folder Include="src\app\fms\" />
+    <Folder Include="src\app\fms\account-book\" />
+    <Folder Include="src\app\base\" />
+    <Folder Include="src\app\site\canvas-background\" />
+    <Folder Include="src\app\site\change-password\" />
+    <Folder Include="src\app\site\index\" />
+    <Folder Include="src\app\site\logo\" />
+    <Folder Include="src\app\site\sidebar\" />
+    <Folder Include="src\app\site\zoom\" />
+    <Folder Include="src\app\utils\" />
+    <Folder Include="src\app\site\" />
+    <Folder Include="src\app\site\default\" />
+    <Folder Include="src\app\site\login\" />
+    <Folder Include="src\assets" />
+    <Folder Include="src\assets\image\" />
+    <Folder Include="src\assets\image\icon\" />
+    <Folder Include="src\assets\image\icon\sidebar\" />
+    <Folder Include="src\assets\image\logo\" />
+    <Folder Include="src\assets\js\" />
+    <Folder Include="src\assets\style\" />
+    <Folder Include="src\environments" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

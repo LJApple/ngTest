@@ -1,0 +1,14 @@
+<div class="employee-clock-record">
+  <h6> {{mouth}}月打卡记录 </h6>
+
+  <div class="employee-clock-time">
+    <angular2-fullcalendar class="fullcalendarClock" #myCalendar   [options]="options"></angular2-fullcalendar>
+  </div>
+
+   
+  <div class="clock-tootips" [ngStyle]="clockStyle">
+    <ul>
+      <li class="clock-tootips-item" *ngFor="let item of clockTimeArr">{{item}}</li>
+    </ul>
+  </div>
+</div>

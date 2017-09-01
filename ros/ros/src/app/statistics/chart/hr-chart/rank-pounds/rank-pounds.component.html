@@ -1,0 +1,17 @@
+
+<div class="employee-turnover-body">
+    <div class="col-sm-12">
+      <h6 class="employee-rank-header">本月排行版</h6>
+      <div class="row employee-rank-body">
+        <div class=" employee-rank-pound" style="width:23%;min-width:220px; margin-right:4%;">
+          <app-rank-tab [ranksData] = "ranksData" ></app-rank-tab>
+        </div>
+        <div class="" style="width:46%;min-width:300px;">
+          <app-employee-clock [calendarOptions] = "calendarOptions"></app-employee-clock>
+        </div>
+        <div class="" style="width:23%;min-width:220px; margin-left:4%;">
+          <app-employee-introduce></app-employee-introduce>
+        </div>
+      </div>
+    </div>
+  </div>

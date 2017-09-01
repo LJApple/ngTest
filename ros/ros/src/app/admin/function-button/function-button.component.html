@@ -1,0 +1,8 @@
+<div class="function-button">
+    <button (click)=createOrder() type="button" class="btn btn-default btn-sm create"><i class="plus"></i>新增</button>
+    <!--<span></span>-->
+    <div *ngIf="show">
+        <button type="button" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i>打印</button>
+        <button type="button" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-download-alt"></i>导出</button>
+    </div>
+</div>

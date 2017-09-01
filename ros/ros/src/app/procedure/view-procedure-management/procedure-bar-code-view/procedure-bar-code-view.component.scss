@@ -1,0 +1,25 @@
+.procedure-barcode-message-view{
+    padding: 15px;
+   .row{
+        margin-left:0!important;
+        margin-right: 0!important;
+        .title{
+            color: #535353;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 120px;
+            line-height: 42px;
+            span{
+                color: #eb525d;
+            }
+        }
+        .title-value{
+
+            padding-top: 8px;
+            line-height: 26px;
+            font-size: 12px;
+        
+        }
+    }
+}
+

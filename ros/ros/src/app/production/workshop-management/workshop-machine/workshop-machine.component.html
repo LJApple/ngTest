@@ -1,0 +1,81 @@
+<div class="workshop-machine-mian fade-in-right" (contextmenu)="onContextClick($event)">
+    <div *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+    </div>
+    <div class="top-panel">
+        <app-function-button [functionCode]="functionCodeCreate" [show]="false"></app-function-button>
+        <div class="data-pick">
+            <nz-root>
+                <span class="feature">新增日期</span>
+                <nz-datepicker style="width: 20%;" (ngModelChange)="_startDate=$event;_startValueChange()"
+                               [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
+                               [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始时间'"></nz-datepicker>
+                <span class="includ">至</span>
+                <nz-datepicker style="width: 20%;" (ngModelChange)="_endDate=$event;_endValueChange()"
+                               [ngModel]="_endDate"
+                               [nzDisabledDate]="_disabledEndDate" [nzFormat]="'YYYY-MM-DD'"
+                               [nzPlaceHolder]="'结束时间'"></nz-datepicker>
+                <span class='machine'>所在车间</span>
+                <nz-select
+                    style="width: 140px;left: 6px;top: 0px;"
+                    nzAllowClear
+                    [nzPlaceHolder]="'选择生产车间'"
+                    [(ngModel)]="workshopOption">
+                    <nz-option
+                        *ngFor="let option of _workshopOption"
+                        [nzLabel]="option.text"
+                        [nzValue]="option.id">
+                    </nz-option>
+                </nz-select>
+                <span class="state">当前状态</span>
+                <nz-select
+                    style="width: 70px;left: 6px;top: 0px;"
+                    nzAllowClear
+                    [nzPlaceHolder]="'请选择状态'"
+                    [(ngModel)]="stateOption">
+                    <nz-option
+                        *ngFor="let option of _stateOption"
+                        [nzLabel]="option.label"
+                        [nzValue]="option.value">
+                    </nz-option>
+                </nz-select>
+            </nz-root>
+            <button class="sbtn" (click)="_filter()">过滤</button>
+        </div>
+    </div>
+    <ag-grid-angular
+        #agGrid
+        workItemResize
+        style="width: 100%;"
+        [style.height.px]="gridBodyHeigt-50"
+        class="ag-ros machine-inspection-grid"
+        rowHeight="38"
+        headerHeight="38"
+        [gridOptions]="gridOptions"
+        enableSorting
+        enableFilter
+        enableColResize
+        animateRows
+        suppressRowClickSelection
+        toolPanelSuppressGroups
+        rowSelection="multiple"
+        singleClickEdit
+        (cellFocused)="onCellFocused($event)"
+        (cellContextMenu)="onCellContextMenu($event)"
+    >
+        <!-- (columnResized)="onColumnResized($event)"-->
+    </ag-grid-angular>
+    <!--分页组件-->
+    <app-ros-pagination
+        [totalPages]="totalPages"
+        [totalItems]="totalItems"
+        (PagesRows)="getPagesRows($event)">
+    </app-ros-pagination>
+    <app-context-menu
+        [isShow]="contextMenuConfig.isShow"
+        [position]="contextMenuConfig.position"
+        [rowData]="contextMenuConfig.rowData"
+        [menuItems]="contextMenuConfig.menuItems"
+        (onItemClick)="onContextItemClick($event)">
+    </app-context-menu>
+</div>

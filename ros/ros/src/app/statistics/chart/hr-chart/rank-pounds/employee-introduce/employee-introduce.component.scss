@@ -1,0 +1,172 @@
+
+.employee-introduce-wrap{
+    h6{
+        padding-bottom: 12px;
+    }
+    .about-employee{
+        //  员工头像 部门 岗位样式
+       .employee-header-picture{
+        height: 80px;
+        width: 80px;
+        margin-right: 10%;
+        div{
+          height: 80px;
+          width: 80px;
+          border-radius: 50%;
+          text-align: center;
+          overflow: hidden;
+          .name-keyword{
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 80px;
+                font-size: 24px;
+            }
+            img{
+                width: 80px;
+                height: 80px;
+                display:block;
+                    
+            }
+        }
+    }
+
+    .employee-departant-selfname{
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                padding: 10px 0;
+                h5{
+
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #535353;
+                    overflow: hidden;
+                    padding-bottom: 5px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+               
+                h6{
+                    font-size: 12px;
+                    color: #898989;
+                    overflow: hidden;
+                    padding-bottom: 0;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+     // 工作情况排序
+     .about-introduce-self{
+
+         overflow-y:auto;
+         height:260px;
+         min-width:220px;
+
+        &::-webkit-scrollbar{  
+            width: 7px;  
+            height: 100%;  
+        }
+        &::-webkit-scrollbar-thumb{  
+            border-radius: 5px;  
+            background-color:#e5e5e5;
+        
+        } 
+        &::-webkit-scrollbar-thumb:hover {   
+            -moz-appearance: none;
+            background-color: #999;
+        }  
+
+         .employee-work-situation{
+            margin-left: 15px;
+        .employee-work-situation-inner{
+            
+                ul{
+                font-size: 12px;
+                padding-left: 15px;
+                border-left: 1px dashed #009cff;
+                position: relative;
+                
+
+                &::before{
+                    content: '';
+                    display: block;
+                    height: 23px;
+                    width: 2px;
+                    background:#fff;
+                    position: absolute;
+                    left: -2px;
+                }
+
+                &::after{
+                    content: '';
+                    display: block;
+                    height: 27px;
+                    width: 2px;
+                    background:#fff;
+                    position: absolute;
+                    left: -2px;
+                    bottom: 0;
+                }
+                li{
+                    height: 60px;
+                    border-bottom: 1px solid #f0f0f0;
+                    position: relative;
+                    padding-top:20px;
+                    
+                    &::before{
+                        content: '';
+                        display: block;
+                        height: 9px;
+                        width: 9px;
+                        background: #26acf1;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: -20px;
+                        top: 39%;
+                    }
+                    .row{
+
+                        height: 100%;
+                        width: 100%;
+                    
+                        &.padding-block:first-child{
+                            border-left-color: transparent;
+                        }
+                        .situation-detail-left{
+                        
+                            padding: 0 6% 0 8%;
+                            width: 40%;
+                            span{
+                                color: #535353;
+                                font-weight: 600;
+                            }
+                            p{
+                                color: #898989;
+                            }
+                        }
+
+                        .situation-detail-right{
+                            width: 46%;
+                            padding: 0!important;
+                            span{
+                                color: #535353;
+                                font-weight: 600;
+                            }
+                            p{
+                                color: #898989;
+                                overflow: hidden;
+                                width:100%;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+      }
+    }
+}

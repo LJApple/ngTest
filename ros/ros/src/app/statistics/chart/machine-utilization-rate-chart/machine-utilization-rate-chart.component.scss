@@ -1,0 +1,40 @@
+.fadeInRight{
+
+    animation: fadeInRight 0.6s;
+    background:#f4f8f9;
+
+    @keyframes fadeInRight {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateX(50px);
+            -ms-transform: translateX(50px);
+            transform: translateX(50px)
+        }
+
+        100% {
+            opacity: 1;
+            -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+            transform: translateX(0)
+        }
+    }
+}
+
+.wrapper{
+    padding:20px;
+    height:100%;
+    overflow: auto;
+
+    .wrapper-content{
+        background:#fff;
+        display: block;
+        width:100%;
+        border: 1px solid #eaeaea;
+        box-shadow: 2px 2px 5px #eaeaea;
+        transition: all 0.2s;
+    }
+
+    .wrapper-content:hover{
+        box-shadow: 6px 6px 17px 1px #eaeaea
+    }
+}

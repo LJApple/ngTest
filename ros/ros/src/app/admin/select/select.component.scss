@@ -1,0 +1,54 @@
+.btn-group{
+
+    width: 170px;
+    height: 28px;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;  
+ 
+    &.focus{
+       border-color: #5cb3fd;
+    }
+   
+    .status-btn-default{
+        width: 150px;
+        height: 26px;
+        float: left;
+        background: #fff;
+        border: 1px solid transparent;
+        border-radius: 3px; 
+        color: #313131;
+        font-size: 12px;
+        text-align: left;
+        &:focus{
+            outline: 0;
+        }
+            
+    }
+    .status-dropdown-toggle{
+        width: 20px;
+        height: 14px;
+        float: left;
+        margin-top: 4px;
+        border:1px solid transparent;
+        background: url('/assets/image/icon/i_12boxdrop.png') no-repeat 0 2px;
+        &:focus{
+            outline: 0;
+        }
+    }
+    .dropdown-menu-status{
+        position: absolute;
+        left: 0;
+        display: none;
+        width: 170px;
+        font-size: 12px;
+        color: #313131;
+        li{
+            line-height: 24px;
+            padding-left: 10px;
+            &:hover{
+                background: #cef;
+            }
+        }
+    }
+}

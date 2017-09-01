@@ -1,0 +1,54 @@
+.defect-code-view{
+    width:100%;
+    height:100%;
+    background:#f4f8f9;
+    padding: 30px 0 0 25px;
+    font-size: 15px;
+    color: #797979;
+    font-family: "monospace";
+    .mian-content{
+       border: 1px solid #ededed;
+        box-shadow: 0 2px 5px #ccc;
+        background-color: #fff;
+        padding: 30px;
+        height: 500px;
+        .view-info{
+            width: 600px;
+            .content-item{
+                position: relative;
+                margin-bottom: 20px;
+                span{
+                    position: absolute;
+                    left: 0px;
+                    top: 2px;
+                    display: inline-block;
+                    margin-right: 20px;
+
+                }
+                div{
+                    display: inline-block;
+                    margin-left: 145px;
+                }
+            }
+        }
+    }
+    .button-box{
+        padding-top:40px;
+        padding-left:4%;
+        button{
+            cursor:pointer;
+            height:36px;
+            width:120px;
+            line-height: 100%;
+            font-size:15px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+        }
+        .machine-close{
+            margin-left:20px;
+            background:#b5b5b5;
+            color: #fff;
+        }
+    }
+}

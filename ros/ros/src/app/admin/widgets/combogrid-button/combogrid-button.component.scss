@@ -1,0 +1,30 @@
+.ag-grid-combogrid{
+    height:100%;
+    width: 100%;
+    position: relative;
+    input{
+        height: 100%;
+        width: 100%;
+        border: 1px solid transparent;
+        &:focus{
+            outline: 0;
+        }
+    }
+    button{
+        
+            position: absolute;
+            right: 8px;
+            top:10px;
+            height: 14px;
+            width: 14px;
+            background: url('/assets/image/icon/i_12boxdrop.png') no-repeat 0 2px;;
+            border: 1px solid transparent;
+            &:focus{
+            outline: 0;
+        }
+        &.active{
+            background: url('/assets/image/icon/i_12boxdrop.png') no-repeat 0 -10px;;
+        }
+   }
+  
+}

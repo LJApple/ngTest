@@ -1,0 +1,61 @@
+.monetary-capital {
+
+  position: relative;
+  margin: 0;
+
+  .head {
+    padding: 0;
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .total {
+    height: 300px;
+    padding: 0;
+
+    .simpleChart {
+      box-shadow: 1px 1px 4px #888888;
+      background-color: #FFFFFF;
+      height: 300px;
+    }
+  }
+
+  .item {
+    padding: 0 0 0 20px;
+    margin-top: 20px;
+
+    [class^="col"] {
+      padding: 0;
+    }
+
+    .content {
+      box-shadow: 1px 1px 4px #888888;
+      background-color: #FFFFFF;
+      height: 500px;
+
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 20px 0 0 20px;
+      }
+
+      &.pie-radius {
+        .chart {
+          height: 450px;
+        }
+      }
+
+      &.bar-line {
+        margin-left: 20px;
+
+        .chart {
+          height: 400px;
+        }
+      }
+    }
+
+  }
+}

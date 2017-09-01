@@ -1,0 +1,24 @@
+
+<form class="fanctorymodel-type-view-container" *ngIf = "formView" >
+
+  <div class="row">
+    <div class="col-sm-1  fanctory-title">工厂模型类型编码 <span>*</span></div>
+    <div class="col-sm-10 col-lg-2 col-md-6 fanctory-input">{{formView.no}}</div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1 fanctory-title">工厂模型类型名称 <span>*</span></div>
+    <div class="col-sm-10 col-lg-2 col-md-6 fanctory-input"> {{formView.name}}</div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col-sm-1 fanctory-title">上级工厂模型类型 <span>*</span></div>
+    <div class="col-sm-10 col-lg-2 col-md-6 fanctory-input"> {{formView.show_parent_name}}</div>
+  </div>
+  <div class="footer">
+    <div class="ros-row button-box">
+      <button type="button" (click)="onFanctoryTypeCancel()" class="btn btn-default ">关闭</button>
+    </div>
+  </div>
+</form>

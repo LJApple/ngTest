@@ -1,0 +1,17 @@
+<div class="process-combogrid">
+    <ag-grid-angular
+        #container
+        workItemResize
+        style="width: 453px; height: 400px;"
+        class="ag-ros machine-inspection-grid"
+        rowHeight="38"
+        headerHeight="38"
+        [gridOptions]="gridOptions"
+        animateRows
+        suppressRowClickSelection
+        rowSelection="multiple"
+        singleClickEdit
+        (rowClicked)="onRowClicked($event)"
+    >
+    </ag-grid-angular>
+</div>

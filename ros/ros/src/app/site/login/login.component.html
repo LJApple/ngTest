@@ -1,0 +1,72 @@
+﻿<div class="container-fluid login-container">
+
+    <header>
+        <div class="container">
+            <div class="logo"></div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="slogan">
+            <h1 class="display-1">SaaS企业运营管理系统</h1>
+            <h1 class="display-3">不仅是软件，更是一种管理理念</h1>
+        </div>
+
+        <div class="login-form">
+            <h4 class="title">企业登录</h4>
+            <form action="#" #f="ngForm" (ngSubmit)="onLogin(f.value)" class="ui form">
+                <div class="form-group row" [class.has-warning]="!isFirstLoad && !accountBook.valid">
+                    <div class="col-12">
+                        <ng-select [allowClear]="true" [multiple]="false" (selected)="onAccountSelected($event)" [items]="bookService.validList | async "
+                            name="LoginForm[account_id]" (focus)="loginService.resetResult()" placeholder="请选择账套" id="login-accountbook"
+                            required ngModel #accountBook="ngModel">
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="form-group row" [class.has-warning]="!isFirstLoad && !username.valid">
+                    <div class="col-12">
+                        <input class="form-control" [class.form-control-warning]="!isFirstLoad && !username.valid" type="text" value="" id="login-username"
+                            name="LoginForm[username]" (focus)="loginService.resetResult()" placeholder="用户名" autocomplete="off"
+                            required ngModel #username="ngModel">
+                    </div>
+                </div>
+                <div class="form-group row" [class.has-warning]="!isFirstLoad && !password.valid">
+                    <div class="col-12">
+                        <input class="form-control" [class.form-control-warning]="!isFirstLoad && !password.valid" type="password" value="" id="login-password"
+                            name="LoginForm[password]" (focus)="loginService.resetResult()" placeholder="密码" autocomplete="off"
+                            required ngModel #password="ngModel">
+                    </div>
+                </div>
+                <div class="form-group row validate-row" [class.has-warning]="!isFirstLoad && !verifyCode.valid">
+                    <div class="col-12">
+                        <input class="form-control" [class.form-control-warning]="!isFirstLoad && !verifyCode.valid" type="text" value="" id="login-validate-code"
+                            name="LoginForm[verifyCode]" (focus)="loginService.resetResult()" placeholder="验证码" autocomplete="off"
+                            required ngModel #verifyCode="ngModel">
+                        <div class="validate-image-container" (click)="refreshCaptcha()">
+                            <img alt="点击换图" title="点击换图" class="validate-image" id="yw0" [src]="captchaUrl">
+                            <a class="validate-refresh-btn" id="yw0_button" [href]="refreshUrl"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row tips-row" [class.has-success]="loginService.result.success" [class.has-warning]="!loginService.result.success"
+                    *ngIf="loginService.result">
+                    <div class="col-12">
+                        <div class="form-control-feedback">{{loginService.result.err_msg || '登录失败，请稍后再试'}}</div>
+                    </div>
+                </div>
+                <div class="form-group row btn-row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block" [disabled]="!f.form.valid || loginService.isProcessing">{{loginService.isProcessing ? '登录中...' : '登录'}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">©2017 深圳市三特科技有限公司</div>
+    </footer>
+
+    <app-canvas-background></app-canvas-background>
+</div>

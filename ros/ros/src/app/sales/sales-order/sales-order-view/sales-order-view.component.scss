@@ -1,0 +1,125 @@
+.create-order-mian {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: pingfang-SC-Blod;
+    color: #535353;
+    background-color: #f4f8f9;
+    min-width: 950px;
+    overflow-y: auto;
+
+    .order-info {
+        width: 85%;
+        background-color: #f4f8f9;
+        font-weight: 600;
+        padding-left: 30px;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        margin-left: 5%;
+        margin:30px 0;
+        .row.input-container {
+            width: 100%;
+            height: 100%;
+            .col-lg-3.mb-3.input-item {
+                margin-bottom: 10px;
+                margin-top: 30px;
+                height: 45px;
+                span {
+                    display: inline-block;
+                    width: 76px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+    .sales-order-tab {
+        .tab-container {
+            .nav-tabs {
+                border: none;
+                .nav-item {
+                    border: none;
+                    .nav-link {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        .buttom-button-group {
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            button {
+                width: 130px;
+                margin-left: 40px;
+                -moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
+                -webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
+                box-shadow:inset 0px -3px 7px 0px #29bbff;
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+                background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+                background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+                background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+                background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+                background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+                background-color:#2dabf9;
+                -moz-border-radius:3px;
+                -webkit-border-radius:3px;
+                border-radius:3px;
+                border:1px solid #93928f;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:15px;
+                padding:9px 23px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #009dff;
+                margin: 20px 0 0 0;
+
+            }
+            button:hover {
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+                background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+                background-color:#0688fa;
+            }
+            button:active {
+                position:relative;
+                top:1px;
+            }
+        }
+    }
+}
+
+.form-control {
+    width: 170px;
+    height: 28px;
+    display: inline-block;
+}
+
+.input-item {
+    padding: 0px;
+    span {
+        display: inline-block;
+        width: 76px;
+        height: 36px;
+    }
+}
+
+button, input, optgroup, select, textarea {
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 1.15;
+    margin: 0
+}
+.order-info .input-containe li.input-item {
+    height: 42px;
+}
+
+

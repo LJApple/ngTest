@@ -1,0 +1,69 @@
+<app-context-menu
+    [isShow]="contextMenuConfig.isShow"
+    [position]="contextMenuConfig.position"
+    [rowData]="contextMenuConfig.rowData"
+    [menuItems]="contextMenuConfig.menuItems"
+    (onItemClick)="onContextItemClick($event)"
+>
+</app-context-menu>
+<!--提示框-->
+<div *ngFor="let alert of alertMessage2">
+    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+</div>
+<!--提示框-->
+<div class="machine-inspection-list-warpper fade-in-right" (contextmenu)="onContextClick($event);">
+    <div class="toolbar-wrapper">
+        <div class="function-button">
+            <!--<button type="button" class="btn btn-primary row-btn" (click)="addMachineInspectionFn($event)">
+                <span class="glyphicon glyphicon-plus"></span>
+                新增
+            </button>-->
+            <app-function-button [functionCode] = "functionCodeCreate" [show]="false"></app-function-button>
+        </div>
+        <div class="search-wrapper">
+            <label>点检计划编号</label>
+            <div class="input-box">
+                <input (change)="valueIsChange($event)" [formControl]="searchValue" class="form-control machine-inspection-search-input" type="text" placeholder="请输入点检计划编号">
+            </div>
+            <div class="search-box">
+                <button type="button" class="btn" (click)="searchClick()">
+                    过滤
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <ag-grid-angular
+        #agGrid
+        style="width: 100%;"
+        [style.height.px]="gridBodyHeigt"
+        class="ag-ros machine-inspection-grid"
+        rowHeight="38"
+        headerHeight="38"
+        [gridOptions]="gridOptions"
+        enableSorting
+        enableFilter
+        enableColResize
+        animateRows
+        suppressRowClickSelection
+        toolPanelSuppressGroups
+        rowSelection="multiple"
+
+        (cellContextMenu)="onCellContextMenu($event)"
+        (cellFocused)="onCellFocused($event)"
+        (cellDoubleClicked)="onCellDoubleClicked($event)"
+
+        (rowClicked)="onRowClicked($event)"
+        (rowSelected)="onRowSelected($event)"
+    >
+    </ag-grid-angular>
+
+
+
+    <!--分页组件-->
+    <app-ros-pagination
+        [totalPages]="totalPages"
+        [totalItems]="totalItems"
+        (PagesRows)="getPagesRows($event)">
+    </app-ros-pagination>
+</div>

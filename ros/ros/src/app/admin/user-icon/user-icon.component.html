@@ -1,0 +1,12 @@
+<div class="user-icon clearfix" [class.collapsed]="isSideBarCollapsed()">
+    <img src="/assets/image/icon/user_avatar_32x32.png" alt="用户头像">
+    <div class="user-info">
+        <div class="user-name" (click)="toogleMenu()">员工姓名</div>
+        <div class="user-position">员工岗位</div>
+    </div>
+    <ul class="user-menu" [@menuAnimation]="menuState">
+        <li>下拉菜单1</li>
+        <li>下拉菜单2</li>
+        <li>下拉菜单3</li>
+    </ul>
+</div>

@@ -1,0 +1,39 @@
+<form class="create-defect-code-warpper fade-in-right container-fluid" [formGroup]="defectGroupModel">
+    <div class="mian-form">
+
+        <div *ngFor="let alert of alertMsg">
+            <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+        </div>
+
+        <div class="input-item row">
+            <span class="name"><i>*</i>不良代码编号</span>
+            <input type="text" class="form-control" formControlName="no">
+            <span class="warm"
+                  [hidden]="defectGroupModel.get('no').valid || defectGroupModel.get('no').untouched">(必填项，请输入字母、数字，最多32个字符)</span>
+        </div>
+
+        <div class="input-item row">
+            <span class="name"><i>*</i>不良代码名称</span>
+            <input type="text" class="form-control" formControlName="name">
+            <span class="warm"
+                  [hidden]="defectGroupModel.get('name').valid || defectGroupModel.get('name').untouched">(必填项，请输入中文、字母、数字，最多32个字符)</span>
+        </div>
+        <div class="text-box row">
+            <span class="name">不良代码描述</span>
+            <textarea class="form-control" rows="3"
+                      formControlName="description"></textarea>
+            <span class="warm"
+                  [hidden]="defectGroupModel.get('description').valid || defectGroupModel.get('description').untouched">(最大长度64个字符)</span>
+        </div>
+        <div class="active row">
+            <span class="name">是否启用</span>
+            <button class="checkbox" (click)="changeActive()">
+                <span *ngIf="active"></span>
+            </button>
+        </div>
+    </div>
+    <div class="ros-row button-box">
+        <button (click)="defectCodeSave()" type="submit" class="btn btn-primary machine-save">保存</button>
+        <button (click)="createCancel()" type="button" class="btn btn-default machine-close">取消</button>
+    </div>
+</form>

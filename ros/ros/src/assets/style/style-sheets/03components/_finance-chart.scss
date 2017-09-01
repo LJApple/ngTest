@@ -1,0 +1,35 @@
+.customer-tab {
+  .nav-tabs {
+    padding-left: 20px;
+
+    .nav-item {
+      line-height: 48px;
+      margin-right: 20px;
+      text-align: center;
+      padding: 0 5px;
+
+      .nav-link {
+        font-size: 15px;
+        font-weight: 600;
+        color: #939393;
+        padding: 5px 0;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: initial;
+
+        &.active,
+        &:hover {
+          cursor: pointer;
+          color: #26ACF1;
+          border-bottom: 2px solid #26ACF1;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    height: 100%;
+  }
+}

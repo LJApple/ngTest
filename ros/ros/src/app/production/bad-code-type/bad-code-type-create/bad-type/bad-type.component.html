@@ -1,0 +1,41 @@
+<div class="bad-type-main" [formGroup]="formModel">
+    <nz-root>
+        <div class="input-row">
+            <span>类型编码<i>*</i></span>
+            <div class="input-area margin-right">
+                <input type="text" class="form-control" placeholder="输入机台编号" formControlName="no">
+                <span class="warm"
+                      [hidden]="formModel.get('no').valid ||formModel.get('no').untouched"
+                >输入英文/数字,限制字符16位</span>
+            </div>
+        </div>
+        <div class="input-row">
+            <span>不良类型名称<i>*</i></span>
+            <div class="input-area margin-right">
+                <input type="text" class="form-control" placeholder="输入机台编号" formControlName="name">
+                <span class="warm"
+                      [hidden]="formModel.get('name').valid ||formModel.get('name').untouched">输入中文/英文/数字,限制字符32位</span>
+            </div>
+        </div>
+        <div class="active row">
+            <span class="name">是否启用</span>
+            <label
+                style="position: absolute;left: 106px;top: 7px;"
+                nz-checkbox
+                formControlName="status"
+                (ngModelChange)="statusChanges()">
+                <span>是</span>
+            </label>
+        </div>
+        <div class="active row group">
+            <span class="name">不良现象</span>
+            <div class="check-group clearfix">
+                <nz-checkbox-group
+                    style=""
+                    formControlName="bad_code"
+                    (ngModelChange)="onChecked()">
+                </nz-checkbox-group>
+            </div>
+        </div>
+    </nz-root>
+</div>

@@ -1,0 +1,99 @@
+.wrapper-content{
+    width:100%;
+    height:470px;
+    background:#fff;
+    border: 1px solid #eaeaea;
+    box-shadow: 2px 2px 5px #eaeaea;
+    transition: all 0.2s;
+    overflow: hidden;
+
+    .sort-title{
+        font-size:16px;
+        font-weight:700;
+        width:100%;
+        height:60px;
+        line-height: 60px;
+        padding-left:20px;
+    }
+
+    .sort-content{
+        width:100%;
+        height: auto;
+        padding:0 20px 20px 20px;
+
+        li.sort-item:hover{
+            background: #e5f5ff;
+            transform:scale(1.1);
+            box-shadow: 1px 1px 3px #eaeaea;
+        }
+        li.active{
+            background: #e5f5ff;
+            transform:scale(1.1);
+            box-shadow: 1px 1px 3px #eaeaea;
+        }
+
+        li.sort-item:first-child{
+            span:nth-child(1){
+                color: #f9ad35;
+                font-weight: 600;
+            }
+        }
+        li.sort-item:nth-child(2){
+            span:nth-child(1){
+                color: #f9ad35;
+                font-weight: 600;
+            }
+        }
+        li.sort-item:nth-child(3){
+            span:nth-child(1){
+                color: #f9ad35;
+                font-weight: 600;
+            }
+        }
+
+        li.sort-item{
+            border-bottom: 1px solid #eaeaea;
+            padding:10px 5px;
+            text-align:center;
+            display: flex;
+            justify-content: space-around;
+            cursor: pointer;
+            transition: all 0.1s;
+
+            span{
+                font-size:13px;
+                font-weight:500;
+                font-family:'微软雅黑';
+                display: inline-block;
+                width:100%;
+            }
+
+            .sort-level{
+                width:60%;
+                color: #333;
+                text-align: left;
+                padding-left:10px;
+            }
+
+            .sort-name{
+                color: #0075d2;
+                text-align: left;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+
+            .sort-value{
+                color: #333;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+}
+
+.wrapper-content:hover{
+    box-shadow: 6px 6px 17px 1px #eaeaea
+}

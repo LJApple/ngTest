@@ -1,0 +1,12 @@
+<div class="context-menu" *ngIf="isShow"
+    [style.left.px]="position.clientX-276"
+    [style.top.px]="position.clientY-50"
+    (click)="closeMenuContext()"
+    (mouseleave)="closeMenuContext()">
+    <ul>
+        <li *ngFor="let item of menuItems" (click)="invokeFunction(item.functionCode, item.handleType, item.handler)">
+            <i class="glyphicon {{item.class}}"></i>
+            {{item.name}}
+        </li>
+    </ul>
+</div>

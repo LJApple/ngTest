@@ -1,0 +1,46 @@
+<div class="workshop-detail-wrapper">
+    <div class="workshop-detail-chart">
+        <div *ngIf="currentData" class="detail-value">
+            {{currentData['plan_quantity']}}
+        </div>
+        <div class="detail-title">
+            计划生产量
+        </div>
+    </div>
+
+    <div class="workshop-detail-chart">
+        <div *ngIf="currentData" class="detail-value">
+            {{currentData['sum_quantity']}}
+        </div>
+        <div class="detail-title">
+            实际生产量
+        </div>
+    </div>
+
+    <div class="workshop-detail-chart">
+        <div *ngIf="currentData" class="detail-value">
+            {{(currentData['complect_rate'] ? currentData['complect_rate'] : 0) | percent:'1.2-2'}}
+        </div>
+        <div class="detail-title">
+            实际达成率
+        </div>
+    </div>
+
+    <div class="workshop-detail-chart">
+        <div *ngIf="currentData" class="detail-value">
+            {{(currentData['unqualified_rate'] ? currentData['unqualified_rate'] : 0) | percent:'1.2-2'}}
+        </div>
+        <div class="detail-title">
+            不良品率
+        </div>
+    </div>
+
+    <div class="workshop-detail-chart">
+        <div *ngIf="currentData" class="detail-value">
+            {{currentData['production_count']}}
+        </div>
+        <div class="detail-title">
+            生产单数量
+        </div>
+    </div>
+</div>

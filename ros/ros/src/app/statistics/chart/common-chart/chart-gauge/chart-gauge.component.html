@@ -1,0 +1,30 @@
+<div class="item clearfix" *ngIf="GaugeData">
+  <div class="pic">
+    <echarts-ng2 #chartGague [option]="option" [style]="{'width': '90%', 'height': '110%', 'display': 'inline-block'}"></echarts-ng2>
+    <a href="#" (click)="jumpTo()">{{GaugeData.title}}</a>
+  </div>
+ <div class="recommend" *ngIf="GaugeData.rec_unit_atPev;else atAfter">
+    <h6>{{GaugeData.rec_one_text}}</h6>
+    <p>
+      {{GaugeData.rec_unit}}
+      <span>{{GaugeData.rec_one_value}} </span>
+    </p>
+    <h6>{{GaugeData.rec_two_text}}</h6>
+    <p>
+      {{GaugeData.rec_unit}}
+      <span>{{GaugeData.rec_two_value}}</span>
+    </p>
+  </div>
+  <ng-template #atAfter>
+    <div class="recommend">
+      <h6>{{GaugeData.rec_one_text}}</h6>
+      <p>
+        <span>{{GaugeData.rec_one_value}} </span> {{GaugeData.rec_unit}}
+      </p>
+      <h6>{{GaugeData.rec_two_text}}</h6>
+      <p>
+        <span>{{GaugeData.rec_two_value}}</span> {{GaugeData.rec_unit}}
+      </p>
+    </div>
+  </ng-template>
+</div>

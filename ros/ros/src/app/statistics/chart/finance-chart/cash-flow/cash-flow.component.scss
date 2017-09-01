@@ -1,0 +1,52 @@
+.cash-flow {
+  margin: 0;
+
+  [class^="col"] {
+    padding: 0;
+  }
+
+  .head {
+    padding: 0;
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
+
+      span {
+        font-size: 14px;
+        font-weight: normal;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .cash-grid {
+    height: 350px;
+  }
+
+  .item:first-child {
+    margin-right: 20px;
+  }
+
+  .item {
+    margin-top: 20px;
+    background-color: #FFF;
+    height: 400px;
+
+    .head {
+      padding: 20px 0 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+
+      span {
+        color: #2983D6;
+        padding-left: 5px;
+      }
+    }
+
+    .chart {
+      height: 90%;
+    }
+  }
+
+}

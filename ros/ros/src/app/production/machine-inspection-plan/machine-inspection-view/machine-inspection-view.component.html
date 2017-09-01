@@ -1,0 +1,41 @@
+<div class="machine-inspection-view-list fade-in-right">
+    <div class="form-wrapper" >
+        <div style="width:100%;height:100%;" *ngIf="formData">
+            <div class="form-row clearfix">
+                <div class="rows clearfix">
+                    <span>点检计划编号:</span>
+                    <i>{{formData.no}}</i>
+                </div>
+                <div class="rows clearfix">
+                    <span>机台编号:</span>
+                    <i>{{formData.machine_no}}</i>
+                </div>
+            </div>
+
+            <div class="form-row clearfix">
+                <div class="rows clearfix">
+                    <span>机台名称:</span>
+                    <i>{{formData.machine_name}}</i>
+                </div>
+                <div class="rows clearfix">
+                    <span>机台分类:</span>
+                    <i>{{formData.machine_category_name}}</i>
+                </div>
+            </div>
+
+            <div class="form-row clearfix">
+                <div class="rows clearfix">
+                    <span>点检项目:</span>
+                    <i>{{formData.content}}</i>
+                </div>
+                <div class="rows clearfix">
+                    <span>点检周期:</span>
+                    <i>{{formData.period | number: '.01'}} 次/天</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ros-row button-box">
+        <button (click)="machineUpdateInfoClose()" type="button" class="btn btn-default machine-close">取消</button>
+    </div>
+</div>

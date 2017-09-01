@@ -1,0 +1,12 @@
+<div class="btn-group dropup status-dropup" [class.focus]="isFocus">
+    <button type="button" (click)="showSelcet($event)" (focus)="focus($event)" *ngIf="defaultValue" (blur)="blur($event)" class="status-btn-default">{{defaultValue['text']}}</button>
+    <input type="text" hidden value="defaultValue['id']">
+    <button type="button" (click)="showSelcet($event)" (focus)="focus($event)" (blur)="blur($event)" class="status-dropdown-toggle"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+    <ul class="dropdown-menu dropdown-menu-status select" [ngStyle]="isHide" [style.bottom.px] = "bottom" (mouseleave)="hideSelect($event)">
+        <li  *ngFor="let item of values" (click)="setValue($event)">
+            <span id={{item.id}} >{{item.text}}</span>
+        </li>
+    </ul>
+</div>

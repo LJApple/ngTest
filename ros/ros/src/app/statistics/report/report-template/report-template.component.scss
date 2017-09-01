@@ -1,0 +1,37 @@
+.report {
+    padding-left: 20px;
+  
+    .filte {
+  
+      .btn-search {
+        cursor: pointer;
+        border: 1px solid #e0e0e0;
+        background: #fff;
+        color: #009cff;
+        background-image: -webkit-linear-gradient(top,#fff,#efefef);
+        border-radius: 3px;
+        font-weight: bold;
+        line-height: initial;
+      }
+  
+      .btn-select {
+        color: #292b2c;
+        background-color: transparent;
+        border-color: #CCC;
+  
+        &.active,
+        &:hover {
+          color: #009cff;
+          background-color: #FFFFFF;
+          cursor: pointer;
+        }
+      }
+  
+      .ant-select {
+        &.hideSelect {
+          display: none;
+        }
+      }
+    }
+  }
+  

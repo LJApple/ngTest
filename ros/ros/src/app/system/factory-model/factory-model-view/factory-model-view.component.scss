@@ -1,0 +1,101 @@
+.factory-model-view-mian {
+    font-size: 13px;
+    color: #535353;
+    background-color: #f4f8f9;
+    padding-top: 30px;
+    padding-left: 20px;
+    height: 100%;
+    width: 100%;
+    .mian-form {
+        /*        border: 1px solid #ccc;*/
+        overflow: hidden;
+        min-height: 300px;
+        min-width: 830px;
+        .row{
+        margin-left:0!important;
+        margin-right: 0!important;
+        line-height: 50px;
+        .title{
+            width: 90px;
+
+        }
+        .title-value{
+
+            padding-top: 8px;
+            line-height: 26px;
+            font-size: 14px;
+        
+        }
+    }
+        .input-row {
+            height: 50px;
+            line-height: 50px;
+
+            span {
+                display: inline-block;
+                width: 90px;
+                i {
+                    color: #ff4450;
+                    font-style: normal;
+                }
+            }
+            .input-area {
+                display: inline-block;
+                position: relative;
+                width: 280px;
+                font-size: 14px;
+
+            }
+            .margin-right {
+                margin-right: 9%;
+                .plus {
+                    font-size: 24px;
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    line-height: 25px;
+                    cursor: pointer;
+                    position: absolute;
+                    left: 243px;
+                    top: 0px;
+                    text-align: center;
+                    color: #9e9e9e;
+                    -webkit-user-select: none;
+                }
+                .plus:active{
+                    position: absolute;
+                    top: 1px;
+
+                }
+
+            }
+        }
+    }
+    .ros-row.button-box {
+        padding-top: 20px;
+        padding-left: 88px;
+        button {
+            cursor: pointer;
+            height: 36px;
+            width: 120px;
+            line-height: 100%;
+            font-size: 15px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        .machine-close {
+            margin-left: 20px;
+            background: #b5b5b5;
+            color: #f4f8f9;
+        }
+        button:active {
+            position: relative;
+            top: 1px;
+        }
+    }
+}
+
+   
+

@@ -1,0 +1,34 @@
+<div class="machine-inspection-create-list fade-in-right">
+        <div class="form-wrapper" (click)="forbidDefault($event)">
+            <form class="form-box" [formGroup]="formModel">
+                <div class="form-row clearfix">
+
+                    <div class="rows clearfix">
+                        <label class="form-label"><span>*</span>成品物料：</label>
+                        <input type="hidden" formControlName="product_id">
+                        <app-combogrid (onGridClick)="onGridClick($event)"
+                                        [group]="formModel"
+                                        [fieldName]="productFieldName"
+                                        [loadGridUrl]="productCombogridUrl"
+                                        [gridArrOptions]="gridArrOptions"
+                                        [setWidth]="setWidth"
+                                        [isGridHide]="isGridHide"
+                        ></app-combogrid>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="sales-order-tab">
+            <tabset>
+                <tab heading="订单清单">
+                    <app-barcode-template-detail></app-barcode-template-detail>
+                </tab>
+            </tabset>
+        </div>
+        <div class="ros-row button-box">
+            <button (click)="machineUpdateInfoSave()" type="submit" class="btn btn-primary machine-save">保存</button>
+            <button (click)="machineUpdateInfoClose()" type="button" class="btn btn-default machine-close">取消</button>
+        </div>
+    </div>
+

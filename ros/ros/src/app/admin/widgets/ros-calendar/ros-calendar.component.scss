@@ -1,0 +1,19 @@
+.btn-select {
+  color: #292b2c;
+  background-color: transparent;
+  border-color: #CCC !important;
+  box-shadow: none !important;
+
+  &.active,
+  &:hover {
+    color: #009cff;
+    background-color: #FFFFFF;
+    cursor: pointer;
+  }
+}
+
+.ant-select {
+  &.hideSelect {
+    display: none;
+  }
+}

@@ -1,0 +1,22 @@
+.main-container {
+    height: 100%;
+    margin-left: 0;
+    padding: 0;
+
+    &.collapsed {
+        margin-left: 0;
+    }
+
+    .header {
+        height: 50px;
+        background: #0b4070;
+    }
+}
+@media(min-width:801px){
+    .main-container {
+        margin-left: 290px;
+        &.collapsed {
+            margin-left: 60px;
+        }
+    }
+}

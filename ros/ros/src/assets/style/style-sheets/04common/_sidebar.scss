@@ -1,0 +1,29 @@
+/**************导航栏样式**********************************************************/
+.sidebar{
+    .sidenav{
+        .module-list-container,.function-list-container{
+            display: none;
+            &.active{
+                display: none;
+            }
+        }
+
+        &.active{
+            .module-list-container,.function-list-container{
+                display: block;
+            }
+        }
+    }
+}
+@media(min-width:801px){
+    .sidebar{
+        .sidenav{
+            .module-list-container,.function-list-container{
+                display: block;
+                &.active{
+                    display: block;
+                }
+            }
+        }
+    }
+}

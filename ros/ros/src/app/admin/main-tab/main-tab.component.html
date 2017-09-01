@@ -1,0 +1,9 @@
+<div class="main-tab-container">
+    <tabset class="ros-main-tab">
+        <tab *ngFor="let tabItem of tabs" [heading]="tabItem.title" [active]="tabItem.active" (select)="selectTab(tabItem.code)" (deselect)="tabItem.active = false" [disabled]="tabItem.disabled" [removable]="tabItem.removable" (removed)="removeTab(tabItem.code)"
+            [customClass]="tabItem.customClass">
+            <app-dynamic-wrapper [isActive]="tabItem.active" [component]="tabItem.component"></app-dynamic-wrapper>
+        </tab>
+    </tabset>
+    <hr/>
+</div>

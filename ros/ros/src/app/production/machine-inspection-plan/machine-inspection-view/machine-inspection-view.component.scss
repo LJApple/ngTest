@@ -1,0 +1,70 @@
+.machine-inspection-view-list {
+    width:100%;
+    height:100%;
+    background:#f4f8f9;
+    padding:20px;
+
+    .form-wrapper {
+        width: 100%;
+        height: 460px;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 1px 1px 3px #eaeaea;
+
+        .form-row{
+            padding:10px 0;
+
+            .rows{
+                font-size: 14px;
+                color: #535353;
+                float:left;
+
+                span{
+                    float:left;
+                    font-family: pingfang-SC-Blod;
+                    font-weight:600;
+                    width:100px;
+                }
+
+                i{
+                    float:left;
+                    font-family:pingfang-sc-regular;
+                    font-style:normal;
+                    width:110px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .rows:last-child{
+                padding-left:100px;
+            }
+        }
+
+        .form-row:first-child{
+            padding-top:0;
+        }
+    }
+
+    .button-box{
+        padding-top:20px;
+
+        button{
+            cursor:pointer;
+            height:36px;
+            width:120px;
+            line-height: 100%;
+            font-size:15px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+        }
+
+        .machine-close{
+
+            background:#b5b5b5;
+            color: #fff;
+        }
+    }
+}

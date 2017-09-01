@@ -1,0 +1,22 @@
+<div class="chart-table" *ngIf="TableData">
+  <div class="title">
+    <strong (click)="jumpTo()">{{TableData.title}}</strong>
+    <a href="#">更多</a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <td *ngFor="let td of TableData.head">
+          {{td.Text}}
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tr of TableData.data">
+        <td *ngFor="let td of TableData.head">
+          {{tr[td.Value]}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

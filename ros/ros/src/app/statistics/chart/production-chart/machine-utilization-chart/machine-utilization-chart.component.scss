@@ -1,0 +1,13 @@
+.machine-utilization-chart{
+    background:#fff;
+    display: block;
+    width:100%;
+    border: 1px solid #eaeaea;
+    box-shadow: 2px 2px 5px #eaeaea;
+    transition: all 0.2s;
+}
+
+.machine-utilization-chart:hover{
+    box-shadow: 6px 6px 17px 1px #eaeaea
+}
+

@@ -1,0 +1,51 @@
+<div class="defect-code-list-warpper fade-in-right" (contextmenu)="onContextClick($event);">
+    <div class="ros-filter-bar container-fluid clearfix">
+        <app-function-button [functionCode]="functionCodeCreate" [show]="false"></app-function-button>
+        <!--      <span class="line"></span>-->
+        <div class="search-container">
+            <label for="">不良代码编号</label>
+            <input type="text" #searchParam placeholder="请输入不良代码编号" (keyup)="initLIst()" [(ngModel)]="keyWords">
+            <button class="sbtn" (click)="filter()">过滤</button>
+        </div>
+    </div>
+    <div *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+    </div>
+    <ag-grid-angular
+        #agGrid
+        workItemResize
+        style="width: 100%;"
+        [style.height.px]="gridBodyHeigt"
+        class="ag-ros machine-inspection-grid"
+        rowHeight="38"
+        headerHeight="38"
+        [gridOptions]="gridOptions"
+        enableSorting
+        enableFilter
+        enableColResize
+        animateRows
+        suppressRowClickSelection
+        toolPanelSuppressGroups
+        rowSelection="multiple"
+        singleClickEdit
+        (cellFocused)="onCellFocused($event)"
+        (cellContextMenu)="onCellContextMenu($event)"
+    >
+        <!-- (columnResized)="onColumnResized($event)"-->
+    </ag-grid-angular>
+    <!--分页组件-->
+    <app-ros-pagination
+        [totalPages]="totalPages"
+        [totalItems]="totalItems"
+
+        (PagesRows)="getPagesRows($event)">
+    </app-ros-pagination>
+</div>
+<app-context-menu
+    [isShow]="contextMenuConfig.isShow"
+    [rowIndex]="contextMenuConfig.rowIndex"
+    [position]="contextMenuConfig.position"
+    [rowData]="contextMenuConfig.rowData"
+    [menuItems]="contextMenuConfig.menuItems"
+    (onItemClick)="onContextItemClick($event)">
+</app-context-menu>

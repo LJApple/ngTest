@@ -1,0 +1,32 @@
+<div class="create-order-mian ui form fade-in-right ros-form-containter">
+
+  <div class="ros-form-body-containter">
+
+    <div class="sales-order-tab procedure-management-tab">
+      <tabset>
+        <tab heading="工序">
+
+         <app-procedure-description-view></app-procedure-description-view>
+
+        </tab>
+        <tab heading="关联工位" (select)="switch('stations')" >
+             <app-procedure-station-grid-view></app-procedure-station-grid-view>
+        </tab>
+        <tab heading="属性参数" (select)="switch('attributes')">
+
+            <app-procedure-attribute-view> </app-procedure-attribute-view>
+        </tab>
+        <tab heading="条码管理">
+           <app-procedure-bar-code-view></app-procedure-bar-code-view>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <div class="ros-row button-box">
+      <button type="button" (click)="cancelView()" class="btn btn-default">关闭</button>
+    </div>
+  </div>
+</div>

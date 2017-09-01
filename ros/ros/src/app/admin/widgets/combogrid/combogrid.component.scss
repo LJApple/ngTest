@@ -1,0 +1,38 @@
+input {
+    float: left;
+}
+.isGridHide {
+    display: none;
+}
+
+input{
+    padding: 6px 12px;
+    height: 28px;
+    display: inline-block;
+    font-size:12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.form-grid{
+    display: inline-block;
+    position:relative;
+
+    .btn{
+        position:absolute;
+        right:0;
+        top:1px;
+        background: url('../../../../assets/image/icon/putArrow.png') no-repeat;
+        background-position: 9px 6px;
+        padding:0;
+        width:30px;
+        height:100%;
+        cursor: pointer;
+        transition: all 0s;
+    }
+
+    .btn.active{
+        background-position-y:-12px;
+    }
+}

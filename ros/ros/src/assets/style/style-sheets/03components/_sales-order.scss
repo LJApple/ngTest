@@ -1,0 +1,53 @@
+/*新增销售订单的tab */
+.sales-order-tab {
+    .tab-container {
+        .nav-tabs {
+            border-bottom: 1px solid #ececec;
+            height: 57px;
+            background-color: #f4f8f9;
+
+            .nav-item {
+                border: none;
+
+                .nav-link {
+                    border: none;
+                    margin-left: 15px;
+                    font-size: 15px;
+                    font-weight: 600;
+                    height: 56px;
+                    line-height: 45px;
+                    color: #939393;
+                    background-color: #f4f8f9;
+                }
+                .nav-link.active {
+                    border-bottom: 2px solid #26acf1;
+                    color: #26acf1;
+                }
+            }
+        }
+    }
+}
+
+.sales-order-tab .tab-content .active.tab-pane {
+    overflow-y: hidden;
+}
+
+.order-info .ui-select-container.dropdown.open {
+    width: 170px;
+    height: 30px;
+    display: inline-block;
+    padding: 0px;
+    .ui-select-match {
+        height: 30px;
+        .btn-secondary.form-control.ui-select-toggle {
+            height: 30px;
+        }
+        .form-control.ui-select-search {
+
+        }
+    }
+    .form-control.ui-select-search {
+        height: 30px;
+        padding: 0;
+    }
+}

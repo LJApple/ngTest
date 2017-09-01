@@ -1,0 +1,116 @@
+.module-item {
+  position: relative;
+  height: 60px;
+  padding-left: 25px;
+  line-height: 60px;
+  cursor: pointer;
+  font-size: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #ffffff;
+  background-color: transparent;
+  border-bottom: 1px solid #404040;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    top: 21px;
+  }
+
+  &::after {
+    content: '>';
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    right: 10px;
+    top: 0;
+    font-size: 1.5rem;
+  }
+
+  &[module_code="organization"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_hr.png') no-repeat;
+  }
+
+  &[module_code="product"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_production.png') no-repeat;
+  }
+
+  &[module_code="warehouse"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_warehouse.png') no-repeat;
+  }
+
+  &[module_code="qc"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_qc.png') no-repeat;
+  }
+
+  &[module_code="customer"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_business.png') no-repeat;
+  }
+
+  &[module_code="sales"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_business.png') no-repeat;
+  }
+
+  &[module_code="purchase"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_purchase.png') no-repeat;
+  }
+
+  &[module_code="production"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_production.png') no-repeat;
+  }
+
+  &[module_code="finance"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_finance.png') no-repeat;
+  }
+
+  &[module_code="statistics"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_statistics.png') no-repeat;
+  }
+
+  &[module_code="authorization"]::before {
+    background: url('/assets/image/icon/sidebar/i_menv1_system.png') no-repeat;
+  }
+
+  &.active,
+  &:hover {
+    font-weight: bold;
+    color: #26acf1;
+
+    &::before {
+      background-position: 0 -18px;
+    }
+  }
+}
+@media(min-width:801px) {
+  .module-item {
+    padding-left: 58px;
+    font-size: .875rem;
+    color: #96989e;
+    background-color: initial;
+    border-bottom: none;
+
+    &::before {
+      left: 30px;
+    }
+
+    &::after {
+      content: '';
+    }
+
+    &.collapsed {
+      .name {
+        display: none;
+      }
+  
+      &::before {
+        left: 21px;
+      }
+    }
+  }
+}

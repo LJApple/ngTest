@@ -1,0 +1,66 @@
+/****************************** main-tab 主tab ******************************/
+.ros-main-tab > .nav-tabs {
+    padding-left: 30px;
+    padding-top: 10px;
+    border-bottom: 0;
+
+    .nav-item {
+        margin-bottom: 0;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s;
+    }
+
+    .nav-link {
+        border-radius: 0;
+        border: 0;
+        padding: 9px 16px 8px 16px;
+        margin-left: 4px;
+        border-top: 2px solid #0b487e;
+        font-size: .875rem;
+        color: #478bca;
+        background: #0b487e;
+
+        &:focus, &:hover {
+            border-color: transparent;
+        }
+
+        &.active {
+            color: #0075d2;
+            border-color: #26acf1;
+            background-color: #fff;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            transition: all 0.2s;
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -o-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+
+            &:focus, &:hover {
+                border-color: #26acf1;
+            }
+        }
+    }
+}
+
+.ros-main-tab > .tab-content {
+    height: 100%;
+    margin-top: -50px;
+    padding-top: 50px;
+
+    .tab-pane {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.ros-list-container {
+    height: 100%;
+}

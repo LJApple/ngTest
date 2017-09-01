@@ -1,0 +1,113 @@
+.list-item {
+  cursor: pointer;
+
+  .list-icon {
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    top: 2px;
+    margin-right: 6px;
+    background: url('/assets/image/icon/sidebar/i_menu2_dot.png') no-repeat;
+  }
+
+  .child-list {
+    overflow: hidden;
+  }
+}
+
+.list-item.top {
+  border-bottom: 1px solid #404040;
+  line-height: 32px;
+  font-size: 1rem;
+  color: #FFFFFF;
+
+  .list-item {
+    padding-left: 48px;
+    font-size: .875rem;
+    color: #FFFFFF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 50px;
+
+    &.active,
+    &:hover {
+      background: #0B4070;
+      border-left: 3px solid #F08200;
+    }
+  }
+
+  .text {
+    padding-left: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 50px;
+
+    &:hover {
+      color: #FFFFFF;
+      background: #0B4070;
+      border-left: 3px solid #0FE0E2;
+    }
+  }
+
+  &.parent {
+    .list-icon {
+      background: url('/assets/image/icon/sidebar/i_menu2_open.png') no-repeat;
+    }
+
+    &.expanded .list-icon {
+      background: url('/assets/image/icon/sidebar/i_menu2_shut.png') no-repeat;
+    }
+  }
+
+  &.active {
+    .text {
+      font-weight: bold;
+      color: #FFFFFF;
+      background: #0B4070;
+      border-left: 3px solid #0FE0E2;
+    }
+  }
+}
+@media(min-width:801px) {
+  .list-item.top {
+    border-top: 1px solid #ccd8e2;
+    border-bottom: none;
+    font-size: .875rem;
+    color: #535353;
+
+    .list-item {
+      font-size: .75rem;
+      line-height: 32px;
+      color: #707070;
+
+      &.active,
+      &:hover {
+        font-weight: bold;
+        background: #c1d8ea;
+        border-left: none;
+      }
+    }
+
+    .text {
+      line-height: 32px;
+
+      &:hover {
+        font-weight: bold;
+        color: #535353;
+        border-left: none;
+        background: #c1d8ea;
+      }
+    }
+    &.active {
+      .text {
+        font-weight: bold;
+        color: #535353;
+        background: #c1d8ea;
+        border-left: none;
+      }
+    }
+  }
+}

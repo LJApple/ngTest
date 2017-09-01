@@ -1,0 +1,28 @@
+<div class="business-chart" [ngBusy]="busy">
+  <div class="top clearfix">
+    <div class="business-schedule">
+      <app-chart-pie [PieData]="PieData_sale"></app-chart-pie>
+    </div>
+    <div class="business-schedule">
+      <app-chart-pie [PieData]="PieData_timely"></app-chart-pie>
+    </div>
+    <div class="business-schedule">
+      <app-chart-gauge [GaugeData]="GaugeData_saleReturn"></app-chart-gauge>
+    </div>
+    <app-chart-table [TableData]="saleTable"></app-chart-table>
+  </div>
+
+  <div class="bottom" *ngIf="CustomerTop10">
+    <div class="top10">
+      <app-chart-rectangle [RectangleData]="CustomerTop10" (change)="onChange($event)"></app-chart-rectangle>
+      <P class="total">总计:<span class="unit">￥</span><span class="value">{{customerTotal}}</span></P>
+    </div>
+    <div class="product-rangking">
+      <div class="header" [ngBusy]="busy_two">
+        <strong>{{productTop_Customer}}</strong><span>{{productTop_Customer_tooltip}}</span>
+      </div>
+       <app-chart-progress *ngFor="let item of productTop" [ProgressData]="item"></app-chart-progress> 
+      <P class="total">总计:<span class="unit">￥</span><span class="value">{{poductTotal}}</span></P>
+    </div>
+  </div>
+</div>

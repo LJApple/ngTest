@@ -1,0 +1,13 @@
+.statistics-report {
+  background-color: #f4f8f9;
+}
+
+.report {
+  nz-alert {
+    display: none;
+
+    &.showError {
+      display: block;
+    }
+  }
+}

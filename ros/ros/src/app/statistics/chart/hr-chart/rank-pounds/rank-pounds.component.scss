@@ -1,0 +1,24 @@
+
+.employee-turnover-body{
+    // min-width: 1000px;
+      width: 100%;
+      padding:20px 20px 30px 20px;
+      background: #fff;
+      .employee-rank-header{
+          font-weight:600;
+          font-size:14px;
+          padding:2px 0 11px 0;
+      }
+     .employee-rank-body{
+         overflow:hidden;
+         .employee-rank-pound{
+          .rank-tab-container{
+            .rank-main-tab {
+              .nav-tabs {
+                  padding-left: 0
+              }
+             }
+          }
+       }
+     } 
+    }

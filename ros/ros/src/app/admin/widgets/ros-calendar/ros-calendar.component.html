@@ -1,0 +1,24 @@
+<nz-root>
+  <nz-select class="mb-2 mr-sm-2 mb-sm-0" style="width: 100px;" nzAllowClear [ngClass]='{hideSelect: year.hideSelect}'
+    [(ngModel)]="year.select">
+    <nz-option *ngFor="let option of year.data" [nzLabel]="option.label" [nzValue]="option">
+    </nz-option>
+  </nz-select>
+  <nz-select class="mb-2 mr-sm-2 mb-sm-0" style="width: 100px;" nzAllowClear [ngClass]='{hideSelect: season.hideSelect}'
+    [(ngModel)]="season.select">
+    <nz-option *ngFor="let option of season.data" [nzLabel]="option.label" [nzValue]="option">
+    </nz-option>
+  </nz-select>
+  <nz-select class="mb-2 mr-sm-2 mb-sm-0" style="width: 100px;" nzAllowClear [ngClass]='{hideSelect: month.hideSelect}'
+    [(ngModel)]="month.select">
+    <nz-option *ngFor="let option of month.data" [nzLabel]="option.label" [nzValue]="option">
+    </nz-option>
+  </nz-select>
+
+  <nz-radio-group [(ngModel)]="size">
+    <label class="btn-select" *ngFor="let button of buttonGroups" [ngClass]='{active:button.isActive}' (click)="checkType(button.id)"
+      nz-radio-button [nzValue]="'button.id'">
+      <span>{{button.name}}</span>
+    </label>
+  </nz-radio-group>
+</nz-root>

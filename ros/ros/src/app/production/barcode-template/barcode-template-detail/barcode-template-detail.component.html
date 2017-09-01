@@ -1,0 +1,31 @@
+<div class="sales-order-datagrid">
+        <div class="top-tool-panel">
+            <div class="function-button">
+                <button type="button" (click)="addRow()" class="btn btn-default btn-sm create"><i class="glyphicon glyphicon-plus"></i>新增</button>
+                <button type="button" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i>编辑</button>
+                <button type="button" (click)="removeRow()" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-download-alt"></i>删除</button>
+            </div>
+        </div>
+        <ag-grid-angular
+            #agGrid
+            workItemResize
+            style="width: 100%;"
+            [style.height.px]="350"
+            class="ag-ros"
+            rowHeight="38"
+            headerHeight="38"
+            [gridOptions]="gridOptions"
+            enableSorting
+            enableColResize
+            animateRows
+            rowSelection="multiple"
+            singleClickEdit
+            (cellValueChanged)="onCellValueChanged($event)"
+            (cellFocused)="onCellFocused($event)">
+        </ag-grid-angular>
+        <app-ros-pagination
+            [totalPages]="totalPages"
+            [totalItems]="totalItems"
+            (PagesRows)="getPagesRows($event)">
+        </app-ros-pagination>
+    </div>

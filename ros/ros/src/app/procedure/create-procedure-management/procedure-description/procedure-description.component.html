@@ -1,0 +1,46 @@
+<div class="procedure-base-message" [formGroup]="procedureFormModel">
+  <div class="row">
+    <div class="col-sm-1  title">工序编号 <span>*</span></div>
+    <div class="col-sm-10 col-lg-2 col-md-6 title-input">
+      <input type="text" formControlName="no" class="form-control is-valid" required>
+    </div>
+     <span class="col-sm-12 col-lg-4  col-md-8 warm"
+          [hidden]="procedureFormModel.get('no').valid || procedureFormModel.get('no').untouched">(必填项，请输入字母、数字，最多16个字符)</span>
+  </div>
+  <div class="row">
+    <div class="col-sm-1 title">工序名称 <span>*</span></div>
+    <div class="col-sm-10 col-lg-2 col-md-6  title-input">
+      <input type="text" formControlName="name" class="form-control is-valid" required>
+    </div>
+     <span class="col-sm-12 col-lg-4  col-md-8 warm"
+          [hidden]="procedureFormModel.get('name').valid || procedureFormModel.get('name').untouched">(必填项，请输入任意字符)</span>
+  </div>
+  <div class="row">
+    <div class="col-sm-1 title ">工序状态<span>*</span></div>
+    <div class="col-sm-10 col-lg-2 col-md-6 title-input">
+       <!-- <app-select [defaultValue] = "defaultValue"  [values] = "values" (selectedId) = "getSelectedId($event)" [bottom] = "bottom" ></app-select> -->
+         <div class="input-area margin-right">
+            <nz-select
+                style="width: 170px;"
+                [nzPlaceHolder]="'请选择状态'"
+                formControlName="status"
+                [nzShowSearch]="false"
+                nzNotFoundContent="没有找到">
+                <nz-option
+                    *ngFor="let option of selectOptions"
+                    [nzLabel]="option.text"
+                    [nzValue]="option.id"
+                    [nzDisabled]="option.disabled">
+                </nz-option>
+            </nz-select>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1 title">工序描述</div>
+    <div class="col-sm-10 title-input">
+      <textarea class="form-control col-sm-10 col-lg-4 col-md-9 " formControlName="description" rows="5"></textarea>
+    </div>
+  </div>
+</div>
+

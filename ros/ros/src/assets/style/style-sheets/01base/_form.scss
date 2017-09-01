@@ -1,0 +1,69 @@
+label.required:before {
+    content: '*';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    color: red;
+}
+
+.ros-form-containter{
+    height: 100%;
+    width: 100%;
+    .ros-form-body-containter{
+
+        width:100%;
+    }
+}
+
+
+/********************************************公用表单保存取消按钮公共**********************************************/
+.footer{
+    padding-left: 30px;
+    .button-box{
+            padding-top:50px;
+
+            button{
+                cursor:pointer;
+                height:36px;
+                width:120px;
+                line-height: 100%;
+                font-size:15px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius:3px;
+                border-radius:3px;
+            }
+
+            button:first-child{
+                margin-right:20px;
+            }
+            .btn-default{
+
+                background:#b5b5b5;
+                color: #fff;
+            }
+        }
+}
+
+/********************************************公用表单新增编辑删除按钮公共**********************************************/
+.top-tool-panel {
+    line-height: 55px;
+    height: 55px;
+    background-color: #f4f8f9;
+    padding-left: 20px;
+    .function-button button {
+        padding-right: 10px;
+        margin-right: 10px;
+        background: #fff;
+        color: #26ACF1;
+        border-color: #26ACF1;
+
+        .create {
+            color: #fff;
+            background: #26ACF1;
+        }
+        i {
+            padding-right: 5px;
+        }
+    }
+}

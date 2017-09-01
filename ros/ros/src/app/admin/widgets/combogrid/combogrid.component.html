@@ -1,0 +1,46 @@
+<div [formGroup]="group" class="form-grid">
+    <input type="text"
+           id="speInput"
+           class="form-control is-valid"
+           formControlName={{fieldName}}
+           (click)="onInputFocus($event)"
+           (blur)="onInputBlur($event)"
+           [style.width.px]="setWidth"
+           (input)="todo($event)"
+           [(ngModel)]="comboValue"
+           autocomplete="off"
+    >
+    <div class="btn" [class.active]="isActive" id="speBtn" (click)="dropDownGrid($event)">
+    </div>
+    <div class="combobox">
+        <ag-grid-angular
+            #agGrid
+            workItemResize
+            style="max-width:600px;
+                    height: 220px; line-height: 30px;
+                    font-weight: 400; box-shadow: 1px 1px 3px #eaeaea;
+                    border-radius: 8px; position: absolute;
+                    top:32px; z-index: 100;left:2px;"
+            class="ag-ros"
+            [style.width.px]="gridWidth"
+
+            [gridOptions]="gridOptions"
+            rowHeight="30"
+            headerHeight="30"
+            enableSorting
+            enableFilter
+            enableColResize
+            animateRows
+            suppressRowClickSelection
+            toolPanelSuppressGroups
+            rowSelection="multiple"
+            singleClickEdit
+
+            (cellValueChanged)="onCellValueChanged($event)"
+            (rowClicked)="onRowClicked($event)"
+            (mouseleave)="closeMenuContext()"
+            [class.isGridHide]="isGridHide"
+        >
+        </ag-grid-angular>
+    </div>
+</div>

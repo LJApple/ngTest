@@ -1,0 +1,18 @@
+<div class="col-sm-12 fade-in-right wrapper">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-5 proBox">
+            <app-num-rate-chart></app-num-rate-chart>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 proBox">
+            <app-machine-utilization-chart></app-machine-utilization-chart>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 proBox">
+            <app-machine-output-sort-chart [localData]="localData"></app-machine-output-sort-chart>
+        </div>
+    </div>
+
+    <div class="workshop-detail-wrapper">
+        <app-workshop-detail-chart [localData]="localData" class="workshop-detail-chart"></app-workshop-detail-chart>
+    </div>
+</div>
+

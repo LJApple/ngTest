@@ -1,0 +1,10 @@
+export const tabsReducer = (state = [], {type, payload}) => {
+    switch (type) {
+        case 'ADD_TAB':
+            return [
+              'active',
+            ];
+        default :
+            return state;
+    }
+}

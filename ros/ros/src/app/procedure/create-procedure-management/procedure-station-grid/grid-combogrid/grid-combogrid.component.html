@@ -1,0 +1,29 @@
+<div class="combobox" [ngStyle] = "isBlock"
+        [style.left.px]="position.clientX-276"
+        [style.top.px]="position.clientY-120">
+        <ag-grid-angular
+            #agGrid
+            workItemResize
+            style="min-width:152px; max-width:600px; height: 220px; line-height: 30px; font-weight: 400; box-shadow: 2px 1px 3px #9ba4a8; border-radius: 8px; position: absolute; top:32px; z-index: 100;"
+            class="ag-ros"
+
+            [gridOptions]="gridOptions"
+            rowHeight="30"
+            headerHeight="30"
+            enableSorting
+            enableFilter
+            enableColResize
+            animateRows
+            suppressRowClickSelection
+            toolPanelSuppressGroups
+            rowSelection="multiple"
+            singleClickEdit
+
+            (rowClicked)="onRowClicked($event)"
+            (mouseleave)="closeMenuContext()"
+        >
+        </ag-grid-angular>
+     </div><!--  (cellValueChanged)="onCellValueChanged($event)"
+            (rowClicked)="onRowClicked($event)"
+            (mouseleave)="closeMenuContext()"
+            [class.isGridHide]="isGridHide" -->

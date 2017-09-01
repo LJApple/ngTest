@@ -1,0 +1,45 @@
+.workshop-detail-wrapper{
+    width:100%;
+    display: flex;
+    overflow: hidden;
+
+    .workshop-detail-chart{
+        flex: 1;
+        margin-right:30px;
+        padding:30px 0;
+        border: 1px solid #eaeaea;
+        box-shadow: 2px 2px 5px #eaeaea;
+        background:#fff;
+        text-align:center;
+
+        .detail-value{
+            color:#4083d5;
+            font-size:32px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .detail-title{
+            color:#444;
+            font-size:18px;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+    .workshop-detail-chart:nth-child(1){
+        border-top: 2px solid #26acf1;
+    }
+    .workshop-detail-chart:nth-child(2){
+        border-top: 2px solid #47c171;
+    }
+    .workshop-detail-chart:nth-child(3){
+        border-top: 2px solid #fabd5d;
+    }
+    .workshop-detail-chart:nth-child(4){
+        border-top: 2px solid #ef757d;
+    }
+    .workshop-detail-chart:last-child{
+        border-top: 2px solid #b085d2;
+        margin-right:0;
+    }
+
+
+}

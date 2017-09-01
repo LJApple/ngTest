@@ -1,0 +1,28 @@
+<div *ngIf="DefectCodeData" class="defect-code-view fade-in-right">
+    <div class="mian-content">
+        <div class="view-info">
+            <div class="content-item">
+                <span>不良代码编号:</span>
+                <div>{{DefectCodeData.no}}</div>
+            </div>
+            <div class="content-item">
+                <span>不良代码名称:</span>
+                <div>{{DefectCodeData.name}}</div>
+            </div>
+            <div class="content-item">
+                <span>不良代码描述:</span>
+                <div class="descript">{{DefectCodeData.description}}</div>
+            </div>
+            <div class="content-item">
+                <span>是否启用:</span>
+                <div>{{DefectCodeData.status}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" button-box">
+        <button (click)="cancelView()" type="button" class="btn btn-default machine-close">取消</button>
+    </div>
+</div>
+
+

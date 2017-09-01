@@ -1,0 +1,41 @@
+
+
+.employee-clock-record{  
+    h6{
+        padding: 6px 0 12px 0;
+    }
+    .employee-clock-time{
+        height: 320px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar{  
+            width: 7px;  
+            height: 100%;  
+        }
+        &::-webkit-scrollbar-thumb{  
+            border-radius: 5px;  
+            background-color:#e5e5e5;  
+        } 
+        &::-webkit-scrollbar-thumb:hover {   
+            -moz-appearance: none;
+            background-color: #999;
+        } 
+    }
+   .clock-tootips{
+       display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    ul{
+        background: #fff;
+        // box-shadow: 0 0 2px #dcdcdc;
+        border: 1px solid #dcdcdc;
+        .clock-tootips-item{
+            line-height: 30px;
+            font-size: 12px;
+            padding: 0 20px;
+        }
+    }
+   }
+}

@@ -1,0 +1,42 @@
+.finance-chart {
+  background-color: #F4F8F9;
+  height: calc(100% - 60px);
+
+  .nav {
+    height: 50px;
+    border-bottom: 1px solid #E3E6E7;
+    padding: 0 20PX;
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        line-height: 48px;
+        margin-right: 20px;
+        text-align: center;
+        padding: 0 5px;
+
+        &.active,
+        &:hover {
+          cursor: pointer;
+          color: #26ACF1;
+          border-bottom: 2px solid #26ACF1;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .finance-tab {
+    .tab-content {
+      height: 100%;
+    }
+  }
+
+  .content {
+    position: relative;
+    padding: 20px;
+    height: calc(100% - 50px);
+  }
+}

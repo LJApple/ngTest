@@ -1,0 +1,90 @@
+.user-icon {
+  position: relative;
+  height: 61px;
+  padding: 14px 0 14px 12px;
+  border-bottom: 1px solid #404040;
+
+  img {
+    position: absolute;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .user-info {
+    margin-left: 40px;
+  }
+
+  .user-name {
+    cursor: pointer;
+    color: #acadb2;
+    float: left;
+    line-height: 31px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 0;
+      width: 0;
+      margin-left: 5px;
+      border-color: #acadb2 transparent transparent transparent;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+    }
+  }
+
+  .user-position {
+    color: #96989e;
+    float: left;
+    margin-left: 20px;
+    line-height: 31px;
+  }
+
+  &.collapsed {
+    padding-left: 14px;
+
+    .user-info {
+      display: none;
+    }
+  }
+
+  .user-menu {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 61px;
+    left: 0;
+    z-index: 1;
+    background: #26acf1;
+  }
+}
+@media(min-width:801px) {
+  .user-icon {
+    font-size: .75em;
+    border-bottom: 1px solid #1c1e26;
+
+    img {
+      position: initial;
+      float: left;
+      width: 32px;
+      height: 32px;
+    }
+
+    .user-info {
+      float: left;
+      margin-left: 10px;
+    }
+
+    .user-name {
+      float: none;
+      line-height: initial;
+    }
+
+    .user-position {
+      color: #96989e;
+      float: none;
+      margin-left: initial;
+      line-height: initial;
+    }
+  }
+}

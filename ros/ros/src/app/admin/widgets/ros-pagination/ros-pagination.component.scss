@@ -1,0 +1,126 @@
+.ros-pagination {
+    padding: 0 20px;
+    display: flex;
+    height: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    font-size: 14px;
+    color: #959595;
+    background-color: #fafafa;
+    border-bottom: 1px solid #efefef;
+    border-top: 1px solid #efefef;
+    line-height: 40px;
+    position: relative;
+
+    .page-items {
+        select {
+            height: 28px;
+            width: 40px;
+            border-radius: 5px;
+
+            option {
+                height: 28px;
+                width: 50px;
+                border-radius: 5px;
+            }
+        }
+
+        .dropup {
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+
+            button {
+                width: 20px;
+                height: 25px;
+                padding: 0;
+                margin: 0;
+                font-size: 13px;
+                background-color: #fafafa;
+                color: #93928f;
+            }
+
+            .arrow {
+                width: 15px;
+                text-align: center;
+            }
+
+            .dropdown-menu.select {
+                color: #535353;
+                font-size: 13px;
+                min-width: 60px;
+                width: 50px;
+                height: 110px;
+                padding: 6px 0;
+                box-shadow: 2px 1px 3px #c2c1be;
+
+                li {
+                    height: 30px;
+                    width: 100%;
+                    padding-left: 10px;
+                    line-height: 30px;
+                }
+
+                li:hover {
+                    background-color: #009cff;
+                }
+            }
+        }
+    }
+
+    .page-controller {
+        width: 350px;
+        height: 38px;
+
+        .buttons {
+            position: absolute;
+            top: 2px;
+            right: 20px;
+            margin-top: 4px;
+
+            .btn-toolbar {
+                .btn-group {
+                    button {
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                        border-radius: 3px;
+
+                        i {
+                            width: 30px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                        }
+                    }
+
+                    input {
+                        border-radius: 3px;
+                    }
+                }
+            }
+
+            button {
+                line-height: 12px;
+                width: 34px;
+                height: 30px;
+
+                i {
+                    color: #959595;
+                }
+            }
+
+            input {
+                width: 50px;
+                height: 30px;
+                border: 1px solid #ccc;
+                text-align: center;
+            }
+        }
+
+        .pagenation-info {
+            float: left;
+            width: 100px;
+        }
+    }
+}

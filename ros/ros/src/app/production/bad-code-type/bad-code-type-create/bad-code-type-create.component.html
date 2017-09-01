@@ -1,0 +1,20 @@
+<div class="bad-code-type-mian">
+    <div *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+    </div>
+    <div class="workshop-mian-tab" [formGroup]="formModel">
+        <tabset>
+            <tab heading="不良类型">
+                <app-bad-type [formModel]="formModel"
+                (checkeds)="getCheckeds($event)"> </app-bad-type>
+            </tab>
+            <tab heading="关联工序">
+                <app-related-process [formModel]="formModel"></app-related-process>
+            </tab>
+        </tabset>
+    </div>
+    <div class="ros-row button-box">
+        <button (click)="submitFrom()" type="submit" class="btn btn-primary machine-save">保存</button>
+        <button (click)="canceledit()" type="button" class="btn btn-default machine-close">取消</button>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<form class="factory-model-view-mian" *ngIf = "factoryViewData">
+  <div class="mian-form">
+      <div class="input-row">
+        <span>模型编号<i>*</i></span>
+        <div class="input-area margin-right" >
+           {{factoryViewData.no}} 
+        </div>
+        <span>模型名称<i>*</i></span>
+        <div class="input-area">
+           {{factoryViewData.name}} 
+         </div>
+      </div>
+      <div class="input-row">
+        <span>上级工厂模型</span>
+        <div class="input-area margin-right">
+           {{factoryViewData.show_parent_id}}  
+        </div>
+        <span>模型类型</span>
+        <div class="input-area">
+           {{factoryViewData.factory_model_type_name}}  
+        </div>
+      </div>
+      <div class="input-row">
+        <span>所属账套</span>
+        <div class="input-area margin-right" *ngIf="accountBookInfo">
+           {{accountBookInfo}}  
+        </div>
+        <span>负责人</span>
+        <div class="input-area">
+           {{factoryViewData.manager}}  
+        </div>
+
+      </div>
+      <div class="input-row">
+        <span>联系方式</span>
+        <div class="input-area margin-right">
+           {{factoryViewData.manager_contact}}  
+        </div>
+        <span class="">是否启用</span>
+        <div class="input-area">
+           {{factoryViewData.show_status}} 
+         </div>
+      </div>
+
+
+      <div class="row">
+        <div class="title">模型描述</div>
+        <div class="col-sm-11  col-lg-4 col-md-10  title-value">
+        {{factoryViewData.description}} 
+        </div>
+      </div>
+  </div>
+  <div class="ros-row button-box">
+    <button (click)="cancelView()" type="button" class="btn btn-default machine-close">关闭</button>
+  </div>
+</form>

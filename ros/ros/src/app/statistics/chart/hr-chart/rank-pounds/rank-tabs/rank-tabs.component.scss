@@ -1,0 +1,86 @@
+
+.rank-main-tab{
+
+    .employee-rank-body{
+        margin-top: 10px;
+        padding-bottom: 44px;
+        .employee-rank-container{
+            line-height: 60px;
+            height: 60px;
+
+            &.active{
+              border-left: 2px solid #009cff;
+              background: #fafafa;
+            }
+                
+            .employee-rank-number{
+        
+                color: #898989;
+                font-size: 16px;
+                padding-left: 4%;
+                &.isTopThree{
+
+                    color: #f9ad35;
+                }
+            }
+
+            .employee-header-picture{
+                 width: 25%;
+                 height: 100%;
+                 text-align: center;
+                 padding: 3% 5% 3% 3%;
+                div{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    text-align: center;
+                    overflow: hidden;
+                    .name-keyword{
+                       color: #fff;
+                       font-size: 16px;
+                       font-weight: 600;
+                       line-height: 40px;
+                    }
+                    img{
+                         width: 40px;
+                         height: 40px;
+                         display:block;
+                         
+                    }
+                }
+            }
+
+            .employee-departant-selfname{
+                width: 38%;
+                height: 100%;
+                overflow: hidden;
+                padding-top: 10px;
+                h5{
+
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #535353;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                h6{
+                    font-size: 12px;
+                    color: #898989;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .employee-work-time{
+                 color: #898989;
+                 padding-left: 6%;
+                  &.isTopThree{
+
+                    color: #f9ad35;
+                }
+            }
+        }
+    }
+}

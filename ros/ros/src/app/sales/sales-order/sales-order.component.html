@@ -1,0 +1,17 @@
+<div class="function-container">
+    <app-filter-bar
+        [config]="filterBarConfig"
+        (onButtonClick)="onFilterButtonClick($event)"
+        (onSearchClick)="onFilterSearchClick($event)">
+    </app-filter-bar>
+
+    <ag-grid-angular
+        style="width: 100%;"
+        class="ag-ros"
+        [style.height.px]="masterListHeight"
+        [gridOptions]="masterListOptions">
+    </ag-grid-angular>
+</div>
+
+<!-- 子组件，用于解决循环引用的问题 -->
+<app-master-list-base-child #masterListBaseChildComponent></app-master-list-base-child>

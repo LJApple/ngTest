@@ -1,0 +1,50 @@
+<div class="employee-introduce-wrap" *ngIf="employeeIntroduce">
+  <h6> 个人履历</h6>
+
+
+  <div class="about-employee">
+  
+    <!--姓名 部门  岗位-->
+    <div class="clearfix" style="overflow:hidden; min-width:220px;">
+      <!--照片  -->
+      <div class="pull-left employee-header-picture">
+        <div *ngIf="!employeeIntroduce.employee.avatar_path" [ngStyle]="backgroundColor">
+          <div class="name-keyword"><span>{{employeeIntroduce.employee.keyword}}</span></div>
+        </div>
+        <div *ngIf="employeeIntroduce.employee.avatar_path">
+          <img src={{employeeIntroduce.employee.avatar_path}} alt="">
+        </div>
+      </div>
+      <div class="pull-left employee-departant-selfname">
+        <h5>{{employeeIntroduce.employee.name}}</h5>
+        <h6>{{employeeIntroduce.employee.organizationName}}</h6>
+        <h6>{{employeeIntroduce.employee.no}}</h6>
+      </div>
+    </div>
+    <!--履历 -->
+   <div  *ngIf="employeeIntroduce.trail" class="about-introduce-self">
+
+     
+       <div class="employee-work-situation">
+        <div class="employee-work-situation-inner">
+          <ul>
+            <li *ngFor="let liItem of employeeIntroduce.trail">
+              <div class="row">
+                <div class="situation-detail-left">
+                  <span>{{liItem.month}}</span>
+                  <p>{{liItem.year}}</p>
+                </div>
+                <div class="situation-detail-right">
+                  <span>{{liItem.event}}</span>
+                  <p>{{liItem.remark}}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>    
+    </div>
+
+    
+  </div>
+</div>

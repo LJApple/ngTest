@@ -1,0 +1,67 @@
+<div class="machine-inspection-create-list fade-in-right">
+    <div class="form-wrapper" (click)="forbidDefault($event)">
+        <div *ngFor="let alert of alertMessage">
+            <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+        </div>
+        <form class="form-box" [formGroup]="machineGroupModel">
+            <div class="form-row clearfix">
+                <div class="rows clearfix">
+                    <label class="form-label"><span>*</span>点检计划编号</label>
+                    <input maxlength="32" (blur)="noOnBlur($event)" class="form-control form-input" type="text" formControlName="MachineCheck[no]">
+                    <input [(ngModel)]="idValue" type="hidden" formControlName="MachineCheck[machine_id]">
+                    <span [class.tips-show]="noShow">该编号已存在或只能输入数字或字母!</span>
+                </div>
+
+                <div class="rows clearfix">
+                    <label class="form-label"><span>*</span>机台编号</label>
+                    <app-combogrid (onGridClick)="onGridClick($event)"
+                                   (isMyInputEmpty)="isMyInputEmpty($event)"
+
+                                   [group]="machineGroupModel"
+                                   [fieldName]="fieldName"
+                                   [loadGridUrl]="loadGridUrl"
+                                   [gridArrOptions]="gridArrOptions"
+                                   [setWidth]="setWidth"
+                                   [gridWidth]="gridWidth"
+                                   [isGridHide]="isGridHide"
+                                   [isActive]="isActive"
+                    ></app-combogrid>
+                </div>
+
+            </div>
+
+            <div class="form-row clearfix">
+                <div class="rows clearfix">
+                    <label class="form-label">机台名称</label>
+                    <input [(ngModel)]="nameValue" class="form-control form-input" type="text" disabled formControlName="MachineCheck[machine_name]">
+                </div>
+
+                <div class="rows clearfix">
+                    <label class="form-label">机台分类</label>
+                    <input [(ngModel)]="typeValue" class="form-control form-input" type="text" disabled formControlName="MachineCheck[machine_category_name]">
+                </div>
+
+            </div>
+
+            <div class="form-row clearfix">
+                <div class="rows clearfix">
+                    <label class="form-label"><span>*</span>点检项目</label>
+                    <input (blur)="contentOnBlur($event)" maxlength="32" class="form-control form-input" type="text" formControlName="MachineCheck[content]">
+                    <span [class.tips-show]="contentShow">只能输入中文、英文或数字!</span>
+                </div>
+
+                <div class="rows clearfix">
+                    <label class="form-label"><span>*</span>点检周期</label>
+                    <input (blur)="periodOnBlur($event)" [(ngModel)]="periodValue" class="form-control form-input" maxlength="6" type="text" style="width:130px;" formControlName="MachineCheck[period]">
+                    <span [class.tips-show]="periodShow">只能输入数字!</span>
+                    <i style="color:#535353;font-size:12px;padding-left:20px;font-style:normal;">次/天</i>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="ros-row button-box">
+        <button (click)="machineUpdateInfoSave()" type="submit" class="btn btn-primary machine-save">保存</button>
+        <button (click)="machineUpdateInfoClose()" type="button" class="btn btn-default machine-close">取消</button>
+    </div>
+</div>

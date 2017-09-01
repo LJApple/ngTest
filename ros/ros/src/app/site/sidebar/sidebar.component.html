@@ -1,0 +1,16 @@
+<div class="sidebar" [class.collapsed]="isSideBarCollapsed()" [@openClose]="stateExpression">
+    <div class="header clearfix">
+        <a href="javascript: void(0)" (click)="rightClick($event)" class="nav-toggle" [ngClass]="{active: isActive}">
+            <div class="hamburger"></div>
+        </a>
+        <div class="logo"></div>
+        <app-zoom (onZoomClick)="onZoomClick($event)"></app-zoom>
+    </div>
+    <div class="sidenav" [ngClass]="{active: isActive}">
+        <app-module-list [moduleList]="moduleList" [sideBarState]="stateExpression" (onTopSelectModule)="onSelectModule($event)" [showFirst]="showFirst"></app-module-list>
+        <app-function-list [functionList]="functionList" [sideBarState]="stateExpression" [currentModuleCode]="currentModuleCode" [showSeconde]="showSeconde" (onReturnModuleList)="returnModuleList($event)" (onReturnPage)="returnPage($event)"></app-function-list>
+    </div>
+    <div class="footer">
+        <div class="copyright">©2017<span>三特科技</span></div>
+    </div>
+</div>

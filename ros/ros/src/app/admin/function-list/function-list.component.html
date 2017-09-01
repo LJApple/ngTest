@@ -1,0 +1,6 @@
+<perfect-scrollbar class="function-list-container" [class.collapsed]="isSideBarCollapsed()" [ngClass]={active:showSeconde}>
+    <div class="header" [attr.module_code]="currentModuleCode" (click)="returnModuleList($event)">{{currentModuleName}}</div>
+    <ul class="function-list">
+        <app-function-unit *ngFor="let functionUnit of currentFunctionList" [functionUnit]="functionUnit" (onFunctionSelect)="onFunctionSelect($event)"></app-function-unit>
+    </ul>
+</perfect-scrollbar>

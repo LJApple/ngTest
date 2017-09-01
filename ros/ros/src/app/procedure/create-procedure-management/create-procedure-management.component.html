@@ -1,0 +1,34 @@
+<form class="create-order-mian ui form fade-in-right ros-form-containter" [formGroup]="procedureFormModel">
+  <nz-root>
+    <div class="ros-form-body-containter">
+
+      <div  *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+      </div>
+
+      <div class="sales-order-tab procedure-management-tab">
+        <tabset>
+          <tab heading="工序">
+            <app-procedure-description [type]="type" [procedureFormModel]="procedureFormModel"></app-procedure-description>
+          </tab>
+          <tab heading="关联工位" (select)="switch('stations')">
+            <app-procedure-station-grid></app-procedure-station-grid>
+          </tab>
+          <tab heading="属性参数" (select)="switch('attributes')">
+            <app-procedure-attribute [type]="type"> </app-procedure-attribute>
+          </tab>
+          <tab heading="条码管理">
+            <app-procedure-bar-code [type]="type" [procedureFormModel]="procedureFormModel"></app-procedure-bar-code>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </nz-root>
+
+  <div class="footer">
+    <div class="ros-row button-box">
+      <button type="submit" (click)="onSubmit()" class="btn btn-primary ">保存</button>
+      <button type="button" (click)="cancelUpdate()" class="btn btn-default ">取消</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,105 @@
+<form class="factory-model-create-mian" [formGroup]="formModel">
+    <div class="mian-form">
+       <div *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+        </div> 
+        <nz-root>
+            <div class="input-row">
+                <span>模型编号 <i>*</i></span>
+                <div class="input-area margin-right">
+                    <input type="text" class="form-control" placeholder="输入英文/数字，限制字符为16位" formControlName="no" >
+                   <span class="warm" [hidden] = "formModel.get('no').untouched ||formModel.get('no').valid">必填项,请输入16位以内的数字/字母</span>
+                </div>
+                <span>模型名称 <i>*</i></span>
+                <div class="input-area">
+                    <input type="text" placeholder="输入中文/英文/数字,限制字符32位" class="form-control" formControlName="name"
+                           >
+                    <span class="warm"
+                    [hidden]=" formModel.get('name').untouched || formModel.get('name').valid">必填项,请输入32位以内的中文/英文/数字</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <span>上级工厂模型 <i>*</i></span>
+                <div class="input-area margin-right">
+                    <nz-select
+                        style="width: 280px;"
+                        nzAllowClear
+                        [nzPlaceHolder]="'选择数釆编号'"
+                        (click) = "onParentIdSelectedt()"
+                        (nzOpenChange) = "nzOpenChange($event)"
+                        formControlName="parent_id"
+                        [nzShowSearch]="true"
+                        nzNotFoundContent="没有找到">
+                        <nz-option
+                            *ngFor="let option of parentModelOptions"
+                            [nzLabel]="option.name"
+                            [nzValue]="option.id"
+                            [nzDisabled]="option.disabled">
+                        </nz-option>
+                    </nz-select>
+                     <span class="warm"  [hidden] = "formModel.get('parent_id').value || isParentIdHide" >必填项</span>
+                </div>
+                <span>模型类型 <i>*</i></span>
+                <div class="input-area">
+                    <nz-select
+                        style="width: 280px;"
+                        nzAllowClear
+                        (click) = "onModelTypeSelectedt()"
+                        [nzPlaceHolder]="'选择数釆编号'"
+                        (nzOpenChange) = "nzOpenChangeType($event)"
+                        formControlName="factory_model_type_id"
+                        [nzShowSearch]="true"
+                        nzNotFoundContent="没有找到">
+                        <nz-option
+                            *ngFor="let option of modelTypeOptions"
+                            [nzLabel]="option.name"
+                            [nzValue]="option.id"
+                            [nzDisabled]="option.disabled">
+                        </nz-option>
+                    </nz-select>
+                    <span class="warm" [hidden] = "formModel.get('factory_model_type_id').value || isModelTypeHide  " >必填项,请先选择上级工厂模型</span>
+                </div>
+            </div>
+            <div class="input-row">
+              <span>所属账套</span>
+                <div class="input-area margin-right">
+                    <input type="text" placeholder="所属账套" formControlName = "accountBook" class="form-control" disabled>
+                </div>
+                <span>负责人</span>
+                <div class="input-area">
+                    <input type="text" placeholder="输入模型负责人" class="form-control" formControlName="manager">
+                </div>
+                
+            </div>
+            <div class="input-row">
+               <span>联系方式</span>
+                <div class="input-area margin-right">
+                    <input type="text" placeholder="输入负责人联系电话" class="form-control" formControlName="manager_contact">
+                       <span class="warm"  aria-selected="" [hidden]="formModel.get('manager_contact').valid || formModel.get('manager_contact').untouched || formModel.get('manager_contact').value == '' ">请输入正确的手机号码</span>
+                    
+                </div>
+                <span class="">是否启用</span>
+                <label     
+                    nz-checkbox
+                    formControlName="status">
+                    <span>是</span>
+                </label>
+            </div>
+
+            <div class="text-box">
+                <span class="name">模型描述</span>
+                <textarea class="form-control" rows="3"
+                          placeholder="输入模型描述"
+                          formControlName="description"></textarea>
+                <span class="warm"></span>
+                
+            </div>
+           
+        </nz-root>
+    </div>
+    <div class="ros-row button-box">
+        <button (click)="saveFrom()" type="submit" class="btn btn-primary machine-save">保存</button>
+        <button (click)="canceledit()" type="button" class="btn btn-default machine-close">取消</button>
+    </div>
+</form>
+

@@ -1,0 +1,44 @@
+// 工序
+
+.procedure-base-message{
+    padding: 15px;
+   .row{
+        margin-left:0!important;
+        margin-right: 0!important;
+        .warm{
+            font-size: 12px;
+            color: #ff1b55;
+            line-height:42px;
+            min-width: 300px;
+        }
+        .title{
+            color: #535353;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 90px;
+            line-height: 42px;
+            span{
+                color: #eb525d;
+            }
+        }
+        .title-input{
+            min-width: 180px;
+            padding-top: 8px;
+            input{
+                width: 170px;
+                height: 28px;
+                line-height: 14px;
+                font-size: 12px;
+            }
+            textarea{
+                font-size: 12px;
+            }
+            .ng-select-status{
+                 width: 170px;
+                height: 28px;
+            }
+        }
+    }
+}
+
+

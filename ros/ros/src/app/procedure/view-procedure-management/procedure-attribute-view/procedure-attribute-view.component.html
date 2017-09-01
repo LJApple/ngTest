@@ -1,0 +1,31 @@
+ <div class="procedure-attribute">
+            
+  <ag-grid-angular
+        #agGrid
+
+        workItemResize
+
+        style="width: 100%; height:700px;"
+        
+        class="ag-ros procedure-attribute-list"
+        rowHeight="38"
+        headerHeight="38"
+        [gridOptions]="gridOptions"
+        enableSorting
+        enableFilter
+        enableColResize
+        animateRows
+        suppressRowClickSelection
+        toolPanelSuppressGroups
+        rowSelection="multiple"
+        singleClickEdit
+    >
+    </ag-grid-angular>
+    <!--分页组件-->
+     <app-ros-pagination
+        [totalPages]="totalPages"
+        [totalItems]="totalItems"
+        (PagesRows)="getPagesRows($event)">
+    </app-ros-pagination>
+      
+</div>

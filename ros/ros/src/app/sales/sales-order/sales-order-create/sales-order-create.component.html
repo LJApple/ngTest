@@ -1,0 +1,105 @@
+<div class="create-order-mian ui form fade-in-right" [formGroup]="formModel">
+    <div class="order-info container-fluid">
+        <ul class="row input-container form-group">
+            <!-- <li *ngFor="let fieldItem of fieldConfig" class="col-lg-3 col-md-6 input-item">
+                <span>{{fieldItem.title}}：</span>
+                <input type="text" class="form-control is-valid" [formControlName]="fieldItem.name">
+            </li> -->
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>销售号：</span>
+                <input type="text" class="form-control is-valid" formControlName="SalesOrder[id]" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>客户：</span>
+                <app-combogrid
+                (onGridClick)="onGridClick($event)"
+                [group]="formModel"
+                [fieldName]="fieldName"
+                [loadGridUrl]="customerGridUrl"
+                [gridArrOptions]="gridArrOptions"
+                [setWidth]="setWidth"
+                [gridWidth]="gridWidth"
+                [isGridHide]="isGridHide"
+                [isActive]="isActive"
+                ></app-combogrid>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>联系人：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>结算方式：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>客户单号：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>出库仓库：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>生产周期：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>税费类型：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>税率：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>税额：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>合计：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>含税合计：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>核定金额：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>原币币种：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>下单日期：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>摘要：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>跟单：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+
+        </ul>
+        <div>
+            {{formModel.value | json}}
+        </div>
+    </div>
+    <div class="sales-order-tab">
+        <tabset>
+            <tab heading="订单清单">
+                <app-sales-order-detail></app-sales-order-detail>
+            </tab>
+        </tabset>
+    </div>
+    <div class="footer">
+        <div class="buttom-button-group">
+            <button type="submit" class="btn btn-primary btn-lg save">保存</button>
+            <button type="button" class="btn btn-secondary btn-lg cancel">取消</button>
+        </div>
+    </div>
+</div>

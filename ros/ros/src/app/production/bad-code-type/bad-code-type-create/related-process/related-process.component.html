@@ -1,0 +1,32 @@
+    <div class="process-main">
+    <div class="top-button">
+        <button (click)="addNewRow()" type="button" class="btn btn-default btn-sm create"><i class="plus"></i>新增
+        </button>
+    </div>
+    <div *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+    </div>
+</div>
+
+<ag-grid-angular
+    #agGrid
+    workItemResize
+    style="width: 100%;"
+    [style.height.px]="gridBodyHeigt"
+    class="ag-ros process-list-grid"
+    rowHeight="38"
+    headerHeight="38"
+    [gridOptions]="gridOptions"
+    animateRows
+    suppressRowClickSelection
+    rowSelection="multiple"
+    singleClickEdit
+>
+</ag-grid-angular>
+<!--分页组件-->
+<app-ros-pagination
+    [totalPages]="totalPages"
+    [totalItems]="totalItems"
+
+    (PagesRows)="getPagesRows($event)">
+</app-ros-pagination>

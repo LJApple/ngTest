@@ -1,0 +1,126 @@
+ 
+
+<div class="ros-list-container" (contextmenu)="onContextClick($event);">  
+
+<!--右键  -->
+  <app-context-menu
+  [isShow]="contextMenuConfig.isShow" 
+  [position]="contextMenuConfig.position" 
+  [rowData]="contextMenuConfig.rowData"
+  [menuItems]="contextMenuConfig.menuItems"
+  (onItemClick)="onContextItemClick($event)"
+  >
+  </app-context-menu>
+
+  <!--删除提示  -->
+     <div  *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+    </div>
+
+  <div class="ros-filter-bar container-fluid clearfix">
+      <app-function-button [functionCode]="functionCodeCreate" [show]="false"></app-function-button>
+      <div class="data-pick">
+            <nz-root>
+              <span class='machine'>结算方式</span>  
+              <nz-select
+                    style="width: 140px;left: 6px;top: 0px;"
+                    nzAllowClear
+                    [nzPlaceHolder]="'请选择结算方式'"
+                    [(ngModel)]="workshopOption">
+                    <nz-option
+                        *ngFor="let option of _workshopOption"
+                        [nzLabel]="option.text"
+                        [nzValue]="option.id">
+                    </nz-option>
+                </nz-select>
+
+                <span class="state">状态</span>
+                <nz-select
+                    style="width: 70px;left: 6px;top: 0px;"
+                    nzAllowClear
+                    [nzPlaceHolder]="'请选择状态'"
+                    [(ngModel)]="stateOption">
+                    <nz-option
+                        *ngFor="let option of _stateOption"
+                        [nzLabel]="option.label"
+                        [nzValue]="option.value">
+                    </nz-option>
+                </nz-select>
+                <span class="feature">新增日期</span>
+                <nz-datepicker style="width: 20%;" (ngModelChange)="_startDate=$event;_startValueChange()"
+                               [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
+                               [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始时间'"></nz-datepicker>
+                <span class="includ">至</span>
+                <nz-datepicker style="width: 20%;" (ngModelChange)="_endDate=$event;_endValueChange()"
+                               [ngModel]="_endDate"
+                               [nzDisabledDate]="_disabledEndDate" [nzFormat]="'YYYY-MM-DD'"
+                               [nzPlaceHolder]="'结束时间'"></nz-datepicker>
+               
+               
+            </nz-root>
+            <button class="sbtn" (click)="_filter()">过滤</button>
+        </div>
+  </div>
+  <!--列表  -->
+  <ag-grid-angular 
+        #agGrid 
+        
+        style="width: 100%; height:400px"
+        [style.height.px]="gridBodyHeigt"
+        class="ag-ros finance-grid"
+        rowHeight="38" 
+        headerHeight="20"
+        [gridOptions]="gridOptions"
+
+        groupHeaders
+        enableSorting
+        enableFilter 
+        enableColResize
+        animateRows 
+        suppressRowClickSelection
+        toolPanelSuppressGroups
+        rowSelection="multiple"
+
+        (cellDoubleClicked)="onCellDoubleClicked($event)"
+        (cellFocused)="onCellFocused($event)"
+        (cellContextMenu)="onCellContextMenu($event)"
+       
+                >
+    </ag-grid-angular>
+
+    <!--分页组件-->
+     <app-ros-pagination
+        [totalPages]="totalPages"
+        [totalItems]="totalItems"
+        (PagesRows)="getPagesRows($event)">
+    </app-ros-pagination>
+
+    <div class="cash-voucher-total"> 
+      <ul>
+        <li>
+          <span class="total-header">月合计：</span>
+          <span class="in-out-come-title">收入：</span>
+          <span class="money">110.00</span>
+          <span class="in-out-come-title">支出：</span>
+          <span class="money">50.00</span>
+          <span class="in-out-come-title">余额本位币：</span>
+          <span class="money">300</span>
+        </li>
+        <li>
+          <span class="total-header">累计：</span>
+          <span class="in-out-come-title">收入：</span>
+          <span class="money">110.00</span>
+          <span class="in-out-come-title">支出：</span>
+          <span class="money">50.00</span>
+          <span class="in-out-come-title">余额本位币：</span>
+          <span class="money">300</span>
+        </li>
+      </ul>
+    </div>
+
+      <div class="ros-row button-box" style=" padding-left:20px;">
+        <button type="submit" onsubmit="" (click)="onPushVoucher()" id="btn-cashvoucher-push-voucher" class=" btn btn-primary ">下推会计凭证</button>
+        <span class="voucher-selected">已选中<span class="voucher-count">22</span>调记录</span>
+      </div>
+     
+</div>  

@@ -1,0 +1,95 @@
+<div class="create-order-mian ui form">
+    <div class="order-info ">
+        <ul class="row input-container form-group container">
+            <li class="col-lg-3 col-md-6 input-item ">
+                <span>销售号：</span>
+                <input type="text" class="form-control is-valid" disabled="disabled" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>客户：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>联系人：</span>
+                <input type="text" class="form-control is-valid" equired>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>结算方式：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>客户单号：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>出库仓库：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>生产周期：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>税费类型：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>税率：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>税额：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>合计：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>含税合计：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>核定金额：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>原币币种：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>下单日期：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>摘要：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+            <li class="col-lg-3 col-md-6 input-item">
+                <span>跟单：</span>
+                <input type="text" class="form-control is-valid" required>
+            </li>
+
+        </ul>
+        <!--<div>
+            {{formModel.value | json}}
+        </div>-->
+    </div>
+    <div class="sales-order-tab">
+        <tabset>
+            <tab heading="订单清单">
+                <ag-grid-angular #agGrid workItemResize style="width: 100%;" [style.height.px]="350" class="ag-ros" rowHeight="30" headerHeight="30"
+                    [gridOptions]="gridOptions" enableSorting enableColResize animateRows suppressRowClickSelection toolPanelSuppressGroups
+                    rowSelection="multiple" (cellFocused)="onCellFocused($event)">
+                </ag-grid-angular>
+            </tab>
+        </tabset>
+    </div>
+    <app-ros-pagination [totalPages]="totalPages" [totalItems]="totalItems" (PagesRows)="getPagesRows($event)">
+    </app-ros-pagination>
+    <div class="footer">
+        <div class="buttom-button-group">
+            <button type="submit" class="btn btn-primary btn-lg save">关闭</button>
+        </div>
+    </div>
+</div>

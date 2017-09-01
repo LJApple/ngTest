@@ -1,0 +1,254 @@
+/* 新增工序下拉状态 */
+.procedure-base-message .dropdown,.procedure-bar-code .dropdown {
+    outline: 0;
+    width: 170px;
+    :hover {
+        background: 0;
+    }
+
+    .form-control {
+
+        padding: 5px 5px 6px 12px;
+        border: 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 12px;
+        color: #535353;
+    }
+
+    .dropdown-menu {
+        border-radius: 0;
+        margin-top: 2px;
+        border-color: #d8e3ed;
+        padding: 0;
+        box-shadow: 0 1px 7px rgba(23, 53, 69, .15);
+        background: #fff;
+
+        .dropdown-item {
+            font-size: 12px;
+        }
+
+        .ui-select-choices-row.active .dropdown-item {
+            color: #535353;
+            background: #cef;
+        }
+    }
+
+    .dropdown-toggle {
+        width: 14px;
+        height: 12px;
+        background: url('/assets/image/icon/i_12boxdrop.png') no-repeat 0 2px;;
+    }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+    .ui-select-placeholder.text-muted {
+        color: #959595 !important;
+    }
+
+
+    .ui-select-search::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 15px;
+        background: url('/assets/image/icon/login_btn_dropdo:;wn_20x20.png');
+    }
+
+    .ui-select-match {
+
+        .pull-right {
+            float: right;
+        }
+
+        .glyphicon {
+            float: right;
+        }
+
+    }
+
+    .pull-left {
+        float: left;
+    }
+}
+
+
+.procedure-bar-code {
+    padding: 15px;
+    height: 500px;
+    position: relative;
+  
+    .row {
+  
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+  
+      .title-rule {
+        color: #535353;
+        font-size: 12px;
+        line-height: 42px;
+        font-weight: 600;
+        min-width: 120px;
+  
+        span {
+          color: #eb525d;
+        }
+      }
+  
+      .title-input {
+  
+        padding-top: 8px;
+  
+        input {
+          width: 170px;
+          height: 28px;
+          display: inline-block;
+          line-height: 14px;
+          font-size: 12px;
+          float: left;
+        }
+  
+        .edit-barcode-rule {
+          padding: 5px;
+          height: 28px;
+          width: 28px;
+          float: left;
+          border: 1px solid #e0e0e0;
+          margin-left: 3px;
+          background: #fff;
+          border-radius: 3px;
+          position: relative;
+  
+          .bar-code-icon {
+            height: 13px;
+            width: 13px;
+            background: url('/assets/image/icon/i_12compile.png') no-repeat;
+          }
+  
+          &.active {
+            border-color: #009cff;
+  
+            .bar-code-icon {
+              background: url('/assets/image/icon/i_12compile.png') no-repeat 0 -12px;
+            }
+          }
+  
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  
+  // 条码校验规则
+  .bar-code-panpel {
+    display: none;
+    height: 300px;
+    width: 370px;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    box-shadow: 0 0 4px #dcdcdc;
+    padding: 20px;
+    position: absolute;
+  
+    h6 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #313131;
+    }
+  
+    ul {
+      padding-top: 20px;
+  
+      li {
+        .radiobox {
+          line-height: 28px;
+          height: 36px;
+          overflow: hidden;
+  
+          .radio-btn {
+            height: 15px;
+            width: 15px;
+            float: left;
+            border: 1px solid transparent;
+            background: url('/assets/image/icon/i_14radio.png') no-repeat;
+            vertical-align: middle;
+            margin-top: 7px;
+            margin-right: 14px;
+  
+            &:focus {
+              outline: 0;
+            }
+  
+            &.isSelected {
+              background: url('/assets/image/icon/i_14radio.png') no-repeat 0 -15px;
+            }
+          }
+  
+          .lbl {
+            font-size: 12px;
+            color: #313131;
+            width: 76px;
+            float: left;
+          }
+  
+          .form-control {
+            width: 200px;
+            height: 28px;
+            font-size: 12px;
+            float: left;
+          }
+        }
+      }
+    }
+  
+    p {
+      font-size: 12px;
+      color: #eb525d;
+      padding-left: 28px;
+    }
+  
+    .footer {
+      padding-left: 0;
+  
+      .button-box {
+        padding-top: 24px;
+  
+        button {
+          width: 80px;
+          height: 28px;
+          font-size: 12px;
+          padding: 0;
+          line-height: 28px;
+  
+          &:first-child {
+            margin-right: 6px;
+          }
+  
+          &:focus {
+            outline: 0;
+          }
+        }
+      }
+    }
+  }
+  @media(min-width:801px) {
+    .sidebar {
+      .sidenav {
+        .function-list-container,
+        .module-list-container {
+          display: block;
+  
+          &.active {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  

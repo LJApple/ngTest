@@ -1,0 +1,18 @@
+/******************** Bootstrap样式覆盖 ********************/
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+        max-width: 100%;
+    }
+}
+
+.btn-primary {
+    border-color: #009cff;
+    background-color: #009cff;
+
+    &:hover {
+    border-color: #0094f2;
+        background-color: #0094f2;
+    }
+}
+/******************** /Bootstrap样式覆盖 ********************/

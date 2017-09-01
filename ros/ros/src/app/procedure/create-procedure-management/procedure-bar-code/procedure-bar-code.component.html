@@ -1,0 +1,86 @@
+<div class="procedure-bar-code" (click) ="forbidDefault($event)" [formGroup]="procedureFormModel">
+ 
+  <div *ngFor="let alert of alertMsg">
+        <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-1  title-rule">序列号规则</div>
+    <div class="col-lg-11 title-input">
+   
+       <div class="input-area margin-right">
+            <nz-select
+                style="width: 170px;"
+                nzAllowClear
+                [nzPlaceHolder]="'请选择条码规则'"
+                formControlName="barcode_type"
+                [nzShowSearch]="false"
+                nzNotFoundContent="没有找到">
+                <nz-option
+                    *ngFor="let option of selectOptions"
+                    [nzLabel]="option.text"
+                    [nzValue]="option.id"
+                    [nzDisabled]="option.disabled">
+                </nz-option>
+            </nz-select>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-1  title-rule">序列号校验规则</div>
+    <div class="col-lg-11 title-input bar-code-rule-wrap">
+      <input type="text" formControlName="barcode_rule" disabled class="form-control is-valid" required>
+      <button class="edit-barcode-rule" [class.active]="isRulesActive" (click)="onbarCodeselected($event)">
+        <div class="bar-code-icon">
+
+        </div>
+      </button> 
+      
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-lg-1  title-rule">序列号生成规则</div> 
+       <div class="col-lg-11 title-input">
+         <input type="text" hidden formControlName="barcode_id">
+         <app-combogrid (onGridClick)="onGridClick($event)"
+                      [group]="procedureFormModel"
+                      [fieldName]="fieldName"
+                      [loadGridUrl]="loadGridUrl"
+                      [gridArrOptions]="gridArrOptions"
+                      [setWidth]="setWidth"
+                      [gridWidth] = "gridWidth"
+                      [params]="params"
+                      [isGridHide]="isGridHide"
+                      [isActive]="isActive"
+          ></app-combogrid>
+        </div>
+    </div>
+
+    <form class="bar-code-panpel"   [formGroup]="formModule" [ngStyle]="isBlock" 
+                                  [style.left.px] = "position.clientX"
+                                  [style.top.px] = "position.clientY" 
+                                   >
+                                   <!--(mouseleave)="closeMenuContext()"  -->
+        <h6>序列号规则选项卡</h6>
+        <ul>
+          <li *ngFor="let item of barRuleOptions">
+            <div class="radiobox">
+              <label>
+                <input type="button" class="radio-btn"  [class.isSelected] = "item.isSelected" (click)="onSelected(item)">
+                <span class="lbl">{{item.title}}</span>
+                <input type="text" [readonly] ="!item.isSelected"  formControlName="{{item.code}}"  ngModel class="form-control is-valid rule-contain-msg">
+              </label> 
+            </div>
+          </li>
+        </ul>
+        <p>注意：*代表任意长度，？代表一个字符</p>
+
+        <div class="footer">
+          <div class="ros-row button-box">
+            <button type="submit" onsubmit="" (click)="onBarCodeRuleSubmit()" class="btn btn-primary ">保存</button>
+            <button type="button" (click)="onBarCodeRuleCancel()" class="btn btn-default ">取消</button>
+          </div>
+        </div>
+      </form>
+</div>

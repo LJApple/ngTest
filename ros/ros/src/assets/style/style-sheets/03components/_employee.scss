@@ -1,0 +1,175 @@
+.rank-main-tab > .nav-tabs {
+    min-width: 220px;
+    border-bottom: 0;
+    border: 1px solid #e0e0e0;
+    line-height: 18px;
+    background: #fafafa;
+    border-radius: 5px;
+    font-size: 12px;
+    .nav-item {
+        margin-bottom: 0;
+        width: 33.33%;
+        border-right: 1px solid #e0e0e0;
+        background: #fafafa;
+        text-align: center;
+    }
+    .nav-item:last-child {
+        border-right: 0;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .nav-item:first-child, .nav-item:first-child:active {
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .nav-link {
+
+        border: 0;
+        color: #898989;
+
+        &:focus, &:hover {
+            border-color: transparent;
+        }
+
+        &.active {
+            color: #009cff;
+            border-color: #26acf1;
+            background-color: #fff;
+            border-radius: 3px;
+            &:focus, &:hover {
+                border-color: #26acf1;
+            }
+        }
+    }
+}
+
+.rank-main-tab > .tab-content {
+    height: 100%;
+    min-width: 220px;
+    margin-top: -50px;
+    padding-top: 50px;
+
+    .tab-pane {
+        height: 100%;
+    }
+}
+
+/*  打卡记录  */
+.employee-clock-record {
+
+    .fc-header-toolbar {
+        display: none !important;
+    }
+    /* 头部style */
+    .fc-head-container {
+        background: #f0f0f0;
+
+    }
+}
+
+/**************************************** /修改人事分析fullcalendar公共样式 ****************************************  */
+.fc-unthemed th {
+    border-color: #f0f0f0 !important;
+    line-height: 30px;
+}
+
+.employee-clock-record .fc table {
+    text-align: left !important;
+    font-size: 0.8em;
+    .fc-event {
+        border-radius: 0;
+    }
+    .fc-day-top {
+        color: #949494;
+    }
+    .fc-basic-view .fc-day-number {
+        padding: 0px !important;
+    }
+}
+
+.employee-clock-record .fc th {
+    color: #898989;
+}
+
+.employee-clock-record .fc-content {
+    padding-left: 10px;
+    .fc-time {
+        display: none;
+    }
+}
+
+.late-leave-early {
+    background: #f3979e !important;
+    border-color: #f3979e !important;
+    .fc-content {
+        border-left: 2px solid #eb525d !important;
+    }
+}
+
+.night-shift {
+    background: #7dcdf7 !important;
+    border-color: #7dcdf7 !important;
+    .fc-content {
+        border-left: 2px solid #26acf1 !important;
+    }
+}
+
+.day-shift {
+    background: #75d19e !important;
+    border-color: #75d19e !important;
+    .fc-content {
+        border-left: 2px solid #19b25e !important;
+    }
+}
+
+.rest-time {
+    background: #d5d5d5 !important;
+    border-color: #d5d5d5 !important;
+    .fc-content {
+        border-left: 2px solid #bfbfbf !important;
+    }
+}
+
+.sick-leave-time {
+    background: #fbce86 !important;
+    border-color: #fbce86 !important;
+    .fc-content {
+        border-left: 2px solid #f9ad35 !important;
+        .late-leave-early {
+            background: #f3979e !important;
+            border: none !important;
+            .fc-content {
+                border-left: 2px solid #eb525d !important;
+            }
+        }
+        .night-shift {
+            background: #7dcdf7 !important;
+            border: none !important;
+            .fc-content {
+                border-left: 2px solid #26acf1 !important;
+            }
+        }
+        .day-shift {
+            background: #75d19e !important;
+            border: none !important;
+            .fc-content {
+                border-left: 2px solid #19b25e !important;
+            }
+        }
+        .rest-time {
+            background: #d5d5d5 !important;
+            border: none !important;
+            .fc-content {
+                border-left: 2px solid #bfbfbf !important;
+            }
+        }
+        .sick-leave-time {
+            background: #fbce86 !important;
+            border: none !important;
+            .fc-content {
+                border-left: 2px solid #f9ad35 !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.sales-volume {
+  background-color: #FFF;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+
+  .head {
+    height: initial;
+    background: #F0F5F6;
+
+    h5 {
+      line-height: 50px;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+
+  .sale-line {
+    height: 50%;
+    padding: 0;
+  }
+
+  .sale-pie {
+    background: #FFF;
+
+    .item {
+      border: 10px solid #F0F5F6;
+      margin-left: 20PX;
+      height: 350px;
+    }
+  }
+
+  echarts-ng2{
+      background: #FFF;
+  }
+}

@@ -1,0 +1,24 @@
+<ag-grid-angular
+    #agGrid
+    workItemResize
+    style="width: 100%;"
+    [style.height.px]="400"
+    class="ag-ros machine-inspection-grid fade-in-right"
+    rowHeight="38"
+    headerHeight="38"
+    [gridOptions]="gridOptions"
+    enableSorting
+    enableFilter
+    enableColResize
+    animateRows
+    rowSelection="multiple"
+>
+    <!-- (columnResized)="onColumnResized($event)"-->
+</ag-grid-angular>
+<!--分页组件-->
+<app-ros-pagination
+    [totalPages]="totalPages"
+    [totalItems]="totalItems"
+
+    (PagesRows)="getPagesRows($event)">
+</app-ros-pagination>

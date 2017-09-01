@@ -1,0 +1,77 @@
+.chart-table {
+  box-shadow: 1px 1px 4px #888888;
+  padding: 20px;
+  height: 400px;
+  overflow-x: auto;
+  margin-top: 20px;
+
+  .title {
+    strong:hover {
+      cursor: pointer;
+    }
+
+    a {
+      font-size: 14px;
+      float: right;
+      color: #000;
+      padding-right: 10px;
+    }
+  }
+
+  .table {
+    margin-top: 20px;
+
+    td {
+      white-space: nowrap;
+    }
+
+    thead {
+      background-color: #F1F1F1;
+
+      tr td {
+        border: 1px solid #fff;
+      }
+    }
+  }
+}
+@media(min-width:1540px) {
+  .chart-table {
+    margin-top: 0;
+    float: left;
+    width: 50%;
+    box-shadow: 1px 1px 4px #888888;
+    padding: 20px;
+    height: 400px;
+    overflow-x: auto;
+
+    .title {
+      strong:hover {
+        cursor: pointer;
+      }
+
+      a {
+        font-size: 14px;
+        float: right;
+        color: #000;
+        padding-right: 10px;
+      }
+    }
+
+    .table {
+      margin-top: 20px;
+
+      td {
+        white-space: nowrap;
+      }
+
+      thead {
+        background-color: #F1F1F1;
+
+        tr td {
+          border: 1px solid #fff;
+        }
+      }
+    }
+  }
+
+}

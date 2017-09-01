@@ -1,0 +1,14 @@
+<div class="wrapper-content">
+    <div class="sort-title" (click)="test()">
+        车间产值排名
+    </div>
+    <div class="sort-content">
+        <ul id="sortList">
+            <li class="sort-item" [class.active]="outPutSortItem === selItem" *ngFor="let outPutSortItem of outPutSortLis; let num = index" (click)="sortListOnclick(num, outPutSortItem)">
+                <span class="sort-level">{{num + 1}}</span>
+                <span class="sort-name">{{outPutSortItem.name | slice: 9}}</span>
+                <span class="sort-value">{{outPutSortItem.output}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

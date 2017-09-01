@@ -1,0 +1,10 @@
+<div class="statistics-report">
+    <tabset class="customer-tab">
+        <tab *ngFor="let tabItem of modules" [heading]="tabItem.title" [active]="tabItem.active" (select)="switch(tabItem.code)"
+            (deselect)="tabItem.active = false" [disabled]="tabItem.disabled">
+            <div class="content">
+                <app-dynamic-wrapper [isActive]="tabItem.active" [component]="tabItem.component"></app-dynamic-wrapper>
+            </div>
+        </tab>
+    </tabset>
+</div>

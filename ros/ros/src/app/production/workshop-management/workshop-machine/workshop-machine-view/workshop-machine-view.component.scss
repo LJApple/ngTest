@@ -1,0 +1,162 @@
+.workshop-machine-view {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f8f9;
+    .main-info {
+        width: 100%;
+        padding: 30px;
+        font-size: 13px;
+        .info-content {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border: 1px solid #f3f3f3;
+            box-shadow: 2px 2px 3px #eceeef;
+            border-radius: 3px;
+            padding: 30px;
+            padding-bottom: 15px;
+            .item {
+                display: inline-block;
+                width: 250px;
+                margin-right: 50px;
+                margin-bottom: 15px;
+                .title {
+                    display: inline-block;
+                    width: 86px;
+                    float: left;
+                }
+                .content {
+                    width: 160px;
+                    float: right;
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 810px) {
+    .workshop-machine-view {
+        .main-info {
+            .info-content {
+                .item {
+                    display: inline-block;
+                    width: 190px;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    .title {
+                        display: inline-block;
+                        width: 76px;
+                        float: left;
+                    }
+                    .content {
+                        display: inline-block;
+                        width: 90px;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 805px) {
+    .workshop-machine-view {
+        .main-info {
+            .info-content {
+                .item {
+                    display: inline-block;
+                    width: 207px;
+                    margin-right: -4px;
+                    margin-bottom: 16px;
+                    .title {
+                        display: inline-block;
+                        width: 76px;
+                        float: left;
+                    }
+                    .content {
+                        display: inline-block;
+                        width: 90px;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1018px) {
+    .workshop-machine-view {
+        .main-info {
+            .info-content {
+                .item {
+                    display: inline-block;
+                    width: 250px;
+                    margin-right: 60px;
+                    margin-bottom: 10px;
+                    .title {
+                        display: inline-block;
+                        width: 86px;
+                        float: left;
+                    }
+                    .content {
+                        display: inline-block;
+                        width: 160px;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1335px) {
+    .workshop-machine-view {
+        .main-info {
+            .info-content {
+                .item {
+                    display: inline-block;
+                    width: 220px;
+                    margin-right: 40px;
+                    margin-bottom: 10px;
+                    .title {
+                        display: inline-block;
+                        width: 76px;
+                        float: left;
+                    }
+                    .content {
+                        display: inline-block;
+                        width: 140px;
+                        float: right;
+                        /*text-overflow: ellipsis;*/
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.button-box {
+    padding-top: 40px;
+    padding-left: 4%;
+    button {
+        cursor: pointer;
+        height: 36px;
+        width: 120px;
+        line-height: 100%;
+        font-size: 15px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .machine-close {
+        margin-left: 20px;
+        background: #b5b5b5;
+        color: #fff;
+    }
+}

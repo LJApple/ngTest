@@ -1,0 +1,73 @@
+<div class="workshop-machine-view fade-in-right">
+    <div class="main-info">
+        <div class="info-content">
+            <div class="item">
+                <span class="title">机台编号:</span> <span class="content">{{workshopData?.no}}</span>
+            </div>
+            <div class="item">
+                <span class="title">所在车间:</span> <span class="content">{{workshopData?.workshop_id}}</span>
+            </div>
+            <div class="item">
+                <span class="title">出厂日期:</span> <span class="content">{{workshopData?.firm_time}}</span>
+            </div>
+            <div class="item">
+                <span class="title">工位:</span> <span class="content">{{workshopData?.station_id}}</span>
+            </div>
+            <div class="item">
+                <span class="title">机台名称:</span> <span class="content">{{workshopData?.name}}</span>
+            </div>
+            <div class="item">
+                <span class="title">机台分类:</span> <span class="content">{{workshopData?.category}}</span>
+            </div>
+            <div class="item">
+                <span class="title">投产日期:</span> <span class="content">{{workshopData?.add_time}}</span>
+            </div>
+            <div class="item">
+                <span class="title">折旧年限:</span> <span class="content">{{workshopData?.useful_year}}</span>
+            </div>
+            <div class="item">
+                <span class="title">机台厂商:</span> <span class="content">{{workshopData?.norms}}</span>
+            </div>
+            <div class="item">
+                <span class="title">购入时间:</span> <span class="content">{{workshopData?.buy_time}}</span>
+            </div>
+            <div class="item">
+                <span class="title">数釆编号:</span> <span class="content">{{workshopData?.collection_no}}</span>
+            </div>
+            <div class="item">
+                <span class="title">是否启用:</span> <span class="content">{{workshopData?.state_text}}</span>
+            </div>
+            <div class="item">
+                <span class="title">机台型号:</span> <span class="content">{{workshopData?.model}}</span>
+            </div>
+            <div class="item">
+                <span class="title">机台IP:</span> <span class="content">{{workshopData?.ip}}</span>
+            </div>
+            <div class="item">
+                <span class="title">存放地点:</span> <span class="content">{{workshopData?.location}}</span>
+            </div>
+            <div class="item">
+                <span class="title">功率/KW:</span> <span class="content">{{workshopData?.power}}</span>
+            </div>
+            <div class="item">
+                <span class="title">机台规格:</span> <span class="content">{{workshopData?.norms}}</span>
+            </div>
+            <div class="item">
+                <span class="title">备注:</span> <span class="content">{{workshopData?.remark}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="recording">
+        <tabset>
+            <tab heading="生产记录">
+                <app-production-records></app-production-records>
+            </tab>
+            <tab heading="日志记录">
+                <app-logging></app-logging>
+            </tab>
+        </tabset>
+    </div>
+    <div class=" button-box">
+        <button (click)="cancelView()" type="button" class="btn btn-default machine-close">取消</button>
+    </div>
+</div>

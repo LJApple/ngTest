@@ -1,0 +1,42 @@
+<app-context-menu
+    [isShow]="contextMenuConfig.isShow"
+    [position]="contextMenuConfig.position"
+    [rowData]="contextMenuConfig.rowData"
+    [menuItems]="contextMenuConfig.menuItems"
+    (onItemClick)="onContextItemClick($event)">
+</app-context-menu>
+
+<div class="machine-inspection-list-warpper fade-in-right" (contextmenu)="onContextClick($event);">
+
+    <app-filter-bar
+        [config]="filterBarConfig"
+        (onButtonClick)="onFilterButtonClick($event)"
+        (onSearchClick)="onFilterSearchClick($event)">
+    </app-filter-bar>
+
+    <ag-grid-angular
+        #agGrid style="width: 100%;"
+        [style.height.px]="gridBodyHeigt"
+        class="ag-ros machine-inspection-grid"
+        rowHeight="38"
+        headerHeight="38"
+        [gridOptions]="gridOptions"
+        enableSorting
+        enableFilter
+        enableColResize
+        animateRows
+        suppressRowClickSelection
+        toolPanelSuppressGroups
+        rowSelection="multiple"
+        (cellContextMenu)="onCellContextMenu($event)"
+        (cellFocused)="onCellFocused($event)"
+        (rowClicked)="onRowClicked($event)"
+        (rowSelected)="onRowSelected($event)">
+    </ag-grid-angular>
+
+    <app-ros-pagination
+        [totalPages]="totalPages"
+        [totalItems]="totalItems"
+        (PagesRows)="getPagesRows($event)">
+    </app-ros-pagination>
+</div>

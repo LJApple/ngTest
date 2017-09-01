@@ -1,0 +1,55 @@
+.debt-equity {
+    margin: 0;
+  
+    [class^="col"] {
+      padding: 0;
+    }
+  
+    .head {
+      padding: 0;
+  
+      p {
+        font-size: 18px;
+        font-weight: 600;
+  
+        span {
+          font-size: 14px;
+          font-weight: normal;
+          padding-left: 5px;
+        }
+      }
+    }
+  
+    .debt-grid {
+      height: 350px;
+    }
+  
+    .item {
+      margin-bottom: 20px;
+      background-color: #FFF;
+      height: 400px;
+      &.first{
+        height: 350px;
+      }
+      &.even{
+        margin-left: 20px;
+      }
+  
+      .head {
+        padding: 20px 0 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+  
+        span {
+          color: #2983D6;
+          padding-left: 5px;
+        }
+      }
+  
+      .chart {
+        height: 90%;
+      }
+    }
+  
+  }
+  

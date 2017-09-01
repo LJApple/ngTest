@@ -1,0 +1,39 @@
+<!-- 删除提示 -->
+<div *ngFor="let alert of alertMsg">
+    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{alert.msg}}</alert>
+</div>
+<!-- 查询条件 -->
+
+<div class="ros-filter-bar container-fluid clearfix">
+    <app-function-button [functionCode]="productionCodeCreate" [show]="false"></app-function-button>
+    <div class="filter">
+        <label class="float-left">筛选</label>
+        <nz-radio-group [(ngModel)]="radioValue" class="raidoReset float-left">
+            <label nz-radio [nzValue]="'oddNumbersArray'" (click)="searchTable()">
+              <span>单号排序</span>
+            </label>
+            <label nz-radio [nzValue]="'productionArray'" (click)="searchTable()">
+              <span>生产排序</span>
+            </label>
+        </nz-radio-group>
+        <div class="float-left">
+            <label>需求来源</label>
+            <nz-select style="width: 120px;" [(ngModel)]="selectedOption" nzAllowClear>
+                <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option">
+                </nz-option>
+            </nz-select>
+        </div>
+    </div>
+    <div class="search">
+        <input type="text" class="filterInput" #searchParam placeholder="请输入产品代码/源单号搜索" [(ngModel)]="keyWords">
+        <button class="filterButton" (click)="filter()">搜索</button>
+    </div>
+</div>
+
+<ag-grid-angular #agGrid style="width: 100%;" [style.height.px]="gridBodyHeight" class="ag-ros machine-inspection-grid" rowHeight="38" headerHeight="38" [gridOptions]="gridOptions" enableSorting enableFilter enableColResize animateRows suppressRowClickSelection
+    toolPanelSuppressGroups rowSelection="multiple">
+</ag-grid-angular>
+
+<!--分页组件-->
+<app-ros-pagination [totalPages]="totalPages" [totalItems]="totalItems" (PagesRows)="getPagesRows($event)">
+</app-ros-pagination>

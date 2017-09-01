@@ -1,0 +1,32 @@
+<div class="item clearfix" *ngIf="PieData">
+  <div class="pic">
+    <echarts-ng2 #chartPie [option]="option" [style]="{'width': '100%', 'height': '100%', 'display': 'inline-block'}"></echarts-ng2>
+    <a href="#" (click)="jumpTo()">{{PieData.title}}</a>
+  </div>
+  <div class="recommend" *ngIf="PieData.rec_unit_atPev;else atAfter">
+    <h6>{{PieData.rec_one_text}}</h6>
+    <p>
+      {{PieData.rec_unit}}
+      <span>{{PieData.rec_one_value}} </span>
+    </p>
+    <h6>{{PieData.rec_two_text}}</h6>
+    <p>
+      {{PieData.rec_unit}}
+      <span>{{PieData.rec_two_value}} </span>
+    </p>
+  </div>
+  <ng-template #atAfter>
+    <div class="recommend">
+      <h6>{{PieData.rec_one_text}}</h6>
+      <p>
+        <span>{{PieData.rec_one_value}}</span> {{PieData.rec_unit}}
+      </p>
+      <h6>{{PieData.rec_two_text}}</h6>
+      <p>
+        <span>{{PieData.rec_two_value}}</span> {{PieData.rec_unit}}
+      </p>
+    </div>
+  </ng-template>
+</div>
+<!-- <div class="loading" *ngIf="!PieData">
+</div> -->

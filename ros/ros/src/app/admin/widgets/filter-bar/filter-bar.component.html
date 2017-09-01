@@ -1,0 +1,16 @@
+<div class="ros-filter-bar container-fluid clearfix">
+    <div *ngIf="config.buttons" class="button-container">
+        <button *ngFor="let button of config.buttons"
+            type="button"
+            class="btn btn-primary btn-sm {{button.class}}"
+            (click)="onFunctionButtonClick($event, button)">
+            <i class="glyphicon glyphicon-plus"></i>
+            {{button.name}}
+        </button>
+    </div>
+    <div *ngIf="config.search" class="search-container">
+        <label for="">{{config.search.key}}</label>
+        <input type="text" #searchParam placeholder="关键字之间用空格分开">
+        <button class="btn btn-primary btn-sm" (click)="onSearchButtonClick($event, config.search, searchParam.value)">过滤</button>
+    </div>
+</div>

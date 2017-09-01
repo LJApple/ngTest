@@ -1,0 +1,108 @@
+<!--机台使用记录  -->
+<div class="col-sm-12 fade-in-right wrapper">
+    <div class="wrapper-content">
+
+        <div class="usage-header">
+            机台使用记录
+        </div>
+        <div class="machine-info">
+            <div class="machine-id">
+                <div class="key">
+                    机台编号:
+                </div>
+                <div *ngIf="test" class="value">
+                    {{test.machine_id}}
+                </div>
+            </div>
+            <div class="using-date">
+                <div class="key">
+                    使用日期:
+                </div>
+                <div *ngIf="test" class="value">
+                    {{test.currentDate}}
+                </div>
+            </div>
+        </div>
+        <div class="usage-content">
+            <div class="state-tips">
+                <div>
+                    <i></i>
+                    <span>待生产</span>
+                </div>
+                <div>
+                    <i></i>
+                    <span>生产中</span>
+                </div>
+                <div>
+                    <i></i>
+                    <span>已完成</span>
+                </div>
+            </div>
+            <div class="usage-chart-border">
+                <ul #myMachineChart class="usage-chart-body" id="usage-chart-body">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <div class="usage-detail" *ngFor="let item of chartData; let num = index" [ngStyle]="{background:item.backgroundColor, left:item['offsetLeft'], width:'100px'}">
+                        <div class="detail-border" (mouseenter)="detailMouseIn($event)" (mouseleave)="detailMouseOut($event)">
+                            <div hidden class="usage-detail-info" [class.posi]="item.isPosition" [class.isRight]="item.isRight">
+                                <div>{{item.product_no}}</div>
+                                <div>产品代码: {{item.product_code}}</div>
+                                <div>生产时间: {{item.timeRest}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+                <ul class="usage-time-body">
+                    <li>0</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <span>24</span>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

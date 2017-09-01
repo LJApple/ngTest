@@ -1,0 +1,95 @@
+.business-chart {
+  margin: 20px;
+  position: relative;
+  width: 100%;
+
+  .top {
+    .business-schedule {
+      padding-right: 20px;
+    }
+  }
+
+  .bottom {
+    margin-top: 20px;
+    box-shadow: 1px 1px 4px #888888;
+    height: 420px;
+    width: 100%;
+
+    .top10 {
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .product-rangking {
+      width: 100%;
+      position: relative;
+
+      .header {
+        padding: 20px 0;
+      }
+    }
+  }
+}
+
+@media (min-width:870px) {
+  .business-chart {
+    .top {
+      .business-schedule {
+        float: left;
+        width: 33.33%;
+      }
+    }
+  }
+}
+
+@media (min-width:1540px) {
+  .business-chart {
+    .top {
+      .business-schedule {
+        width: 16.66%;
+      }
+    }
+
+    .bottom {
+      height: 440px;
+
+      .total {
+        font-size: 17px;
+        font-weight: 550;
+        position: absolute;
+        bottom: 10px;
+        left: 30px;
+
+        .unit {
+          font-size: 16px;
+          font-weight: 500;
+          padding: 0 5px;
+          color: #757575;
+        }
+
+        .value {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      .top10 {
+        padding: 0;
+        width: 70%;
+        float: left;
+        position: relative;
+      }
+
+      .product-rangking {
+        height: 100%;
+        width: 30%;
+        float: left;
+
+        .total {
+          left: 0;
+        }
+      }
+    }
+  }
+}
