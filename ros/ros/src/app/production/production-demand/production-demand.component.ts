@@ -228,7 +228,16 @@ export class ProductionDemandComponent implements OnInit {
     Observable.fromPromise(this.ProductionDemandService
       .getProductionDemandList(this.RowState.page, this.RowState.row))
       .subscribe(data => {
-        this.reloadTable(data)
+        console.log();
+        if (data.rows.length>0) {
+          this.reloadTable(data)
+        } else {
+          this.alertMsg.push({
+            type:"danger",
+            msg:"操作失败",
+            timeout:2000
+          });
+        }
       });
   };
   // 重新加载表格数据
